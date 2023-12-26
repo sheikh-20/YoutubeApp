@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -9,12 +11,14 @@ android {
 
     defaultConfig {
         applicationId = "com.application.youtubeapp"
-        minSdk = 19
+        minSdk = 21
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        compileSdkPreview = "UpsideDownCake"
     }
 
     buildTypes {
@@ -40,6 +44,8 @@ android {
 
 dependencies {
 
+    val timberVersion = "5.0.1"
+
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.8.0")
@@ -47,4 +53,16 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+    // Dagger - Hilt
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-android-compiler:2.44")
+
+    implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
+
+    // Timber for log
+    implementation("com.jakewharton.timber:timber:$timberVersion")
+
+    // Splash screen
+    implementation("androidx.core:core-splashscreen:1.1.0-alpha02")
 }
