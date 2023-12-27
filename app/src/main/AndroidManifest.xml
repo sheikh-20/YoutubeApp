@@ -18,18 +18,19 @@
             android:name=".presentation.onboarding.OnboardingActivity"
             android:exported="true"
             android:theme="@style/Theme.YoutubeApp.Splash">
+
+        </activity>
+
+        <activity
+            android:name=".presentation.home.HomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.YoutubeApp.Splash">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.YoutubeApp.Splash">
 
         </activity>
     </application>

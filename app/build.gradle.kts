@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -55,14 +56,22 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     // Dagger - Hilt
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
 
-    implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
+    implementation("androidx.hilt:hilt-navigation-fragment:1.1.0")
+
+    implementation("androidx.navigation:navigation-fragment-ktx:${rootProject.extra.get("nav_version")}")
+    implementation("androidx.navigation:navigation-ui-ktx:${rootProject.extra.get("nav_version")}")
+
 
     // Timber for log
     implementation("com.jakewharton.timber:timber:$timberVersion")
 
     // Splash screen
     implementation("androidx.core:core-splashscreen:1.1.0-alpha02")
+
+    // Material icon extended
+    implementation("androidx.compose.material:material-icons-extended:1.6.0-alpha02")
+
 }
