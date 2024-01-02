@@ -1,6 +1,7 @@
 package com.application.youtubeapp.data.api
 
 import com.application.youtubeapp.data.response.LanguageDto
+import com.application.youtubeapp.data.response.PopularVideoDto
 import com.application.youtubeapp.data.response.VideoCategoryDto
 import retrofit2.Response
 import retrofit2.http.GET
@@ -12,5 +13,13 @@ interface YoutubeApi {
     suspend fun getLanguages(): Response<LanguageDto>
 
     @GET("youtube/v3/videoCategories")
-    suspend fun getVideoCategory(@Query("part") part: String = "snippet", @Query("regionCode") regionCode: String = "IN"): Response<VideoCategoryDto>
+    suspend fun getVideoCategory(@Query("part") part: String = "snippet",
+                                 @Query("regionCode") regionCode: String = "IN"): Response<VideoCategoryDto>
+
+
+    @GET("youtube/v3/videos")
+    suspend fun getPopularVideos(@Query("part") part: String = "snippet",
+                                 @Query("chart") chart: String = "mostPopular",
+                                 @Query("maxResults") maxResults: Int = 25,
+                                 @Query("regionCode") regionCode: String = "IN"): Response<PopularVideoDto>
 }
