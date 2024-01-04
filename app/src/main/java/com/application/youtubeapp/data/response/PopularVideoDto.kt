@@ -50,11 +50,11 @@ data class PopularVideoDto(
             @SerialName("channelTitle")
             val channelTitle: String?,
 
-            @SerialName("defaultAudioLanguage")
-            val defaultAudioLanguage: String?,
+//            @SerialName("defaultAudioLanguage")
+//            val defaultAudioLanguage: String?,
 
-            @SerialName("defaultLanguage")
-            val defaultLanguage: String?,
+//            @SerialName("defaultLanguage")
+//            val defaultLanguage: String?,
 
             @SerialName("description")
             val description: String?,
@@ -68,8 +68,8 @@ data class PopularVideoDto(
             @SerialName("publishedAt")
             val publishedAt: String?,
 
-            @SerialName("tags")
-            val tags: List<String?>?,
+//            @SerialName("tags")
+//            val tags: List<String?>?,
 
             @SerialName("thumbnails")
             val thumbnails: Thumbnails?,

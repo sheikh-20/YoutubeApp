@@ -14,8 +14,8 @@ fun PopularVideoDto.toDomain(): PopularVideo {
                     categoryId = it?.snippet?.categoryId,
                     channelId = it?.snippet?.channelId,
                     channelTitle = it?.snippet?.channelTitle,
-                    defaultAudioLanguage = it?.snippet?.defaultAudioLanguage,
-                    defaultLanguage = it?.snippet?.defaultLanguage,
+//                    defaultAudioLanguage = it?.snippet?.defaultAudioLanguage,
+//                    defaultLanguage = it?.snippet?.defaultLanguage,
                     description = it?.snippet?.description,
                     liveBroadcastContent = it?.snippet?.liveBroadcastContent,
                     localized = PopularVideo.Item.Snippet.Localized(
@@ -23,7 +23,7 @@ fun PopularVideoDto.toDomain(): PopularVideo {
                         title = it?.snippet?.localized?.title
                     ),
                     publishedAt = it?.snippet?.publishedAt,
-                    tags = it?.snippet?.tags,
+//                    tags = it?.snippet?.tags,
                     thumbnails = PopularVideo.Item.Snippet.Thumbnails(
                         default = PopularVideo.Item.Snippet.Thumbnails.Default(
                             height = it?.snippet?.thumbnails?.default?.height,
