@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.application.youtubeapp.R
 import com.application.youtubeapp.adapter.VideoCategoryAdapter
+import com.application.youtubeapp.adapter.VideoPopularAdapter
 import com.application.youtubeapp.common.Resource
 import com.application.youtubeapp.databinding.FragmentHomeBinding
 import com.application.youtubeapp.presentation.viewmodel.HomeViewModel
@@ -22,6 +23,7 @@ class HomeFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModels()
 
     private lateinit var adapter: VideoCategoryAdapter
+    private lateinit var videoPopularAdapter: VideoPopularAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +41,9 @@ class HomeFragment : Fragment() {
         adapter = VideoCategoryAdapter()
         binding.rvVideoCategory.adapter = adapter
 
+        videoPopularAdapter = VideoPopularAdapter()
+        binding.rvVideoPopular.adapter = videoPopularAdapter
+
         homeViewModel.videoCategory.observe(viewLifecycleOwner) {
             when (it) {
                 is Resource.Loading -> {
@@ -50,6 +55,16 @@ class HomeFragment : Fragment() {
                 is Resource.Success -> {
                     binding.progressBar.hide()
                     adapter.submitList(it.data)
+                }
+            }
+        }
+
+        homeViewModel.videoPopular.observe(viewLifecycleOwner) {
+            when (it) {
+                is Resource.Loading -> { }
+                is Resource.Failure -> { }
+                is Resource.Success -> {
+                    videoPopularAdapter.submitList(it.data.items)
                 }
             }
         }

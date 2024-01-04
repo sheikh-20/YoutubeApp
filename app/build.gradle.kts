@@ -103,6 +103,7 @@ dependencies {
     // Retrofit with Jakewharton Converter
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
 
-
+    // Coil
+    implementation("io.coil-kt:coil:2.4.0")
 
 }
