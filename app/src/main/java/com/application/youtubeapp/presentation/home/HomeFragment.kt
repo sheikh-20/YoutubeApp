@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.coroutineScope
 import androidx.lifecycle.lifecycleScope
 import com.application.youtubeapp.R
 import com.application.youtubeapp.adapter.VideoCategoryAdapter
@@ -15,6 +16,7 @@ import com.application.youtubeapp.databinding.FragmentHomeBinding
 import com.application.youtubeapp.presentation.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -59,13 +61,9 @@ class HomeFragment : Fragment() {
             }
         }
 
-        homeViewModel.videoPopular.observe(viewLifecycleOwner) {
-            when (it) {
-                is Resource.Loading -> { }
-                is Resource.Failure -> { }
-                is Resource.Success -> {
-                    videoPopularAdapter.submitList(it.data.items)
-                }
+        lifecycle.coroutineScope.launch {
+            homeViewModel.getPopularVideo().collect {
+                videoPopularAdapter.submitData(it)
             }
         }
     }

@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.paging.cachedIn
 import com.application.youtubeapp.common.Resource
 import com.application.youtubeapp.domain.model.PopularVideo
 import com.application.youtubeapp.domain.model.VideoCategory
@@ -36,14 +37,7 @@ class HomeViewModel @Inject constructor(private val videoCategoryUseCase: VideoC
         }
     }
 
-    fun getPopularVideo() = viewModelScope.launch {
-        try {
-            _videoPopular.postValue(videoPopularUseCase() ?: return@launch)
-            Timber.tag(TAG).d(_videoPopular.value.toString())
-        } catch (exception: IOException) {
-            Timber.tag(TAG).e(exception)
-        }
-    }
+    fun getPopularVideo() = videoPopularUseCase().cachedIn(viewModelScope)
 
     init {
         getPopularVideo()

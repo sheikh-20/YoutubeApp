@@ -2,6 +2,7 @@ package com.application.youtubeapp.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +12,7 @@ import com.application.youtubeapp.domain.model.PopularVideo
 import com.application.youtubeapp.domain.model.VideoCategory
 import timber.log.Timber
 
-class VideoPopularAdapter: ListAdapter<PopularVideo.Item, VideoPopularAdapter.VideoPopularViewHolder>(DiffCallback) {
+class VideoPopularAdapter: PagingDataAdapter<PopularVideo.Item, VideoPopularAdapter.VideoPopularViewHolder>(DiffCallback) {
 
     companion object DiffCallback : DiffUtil.ItemCallback<PopularVideo.Item>() {
 
@@ -38,6 +39,6 @@ class VideoPopularAdapter: ListAdapter<PopularVideo.Item, VideoPopularAdapter.Vi
     }
 
     override fun onBindViewHolder(holder: VideoPopularViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position) ?: PopularVideo.Item(null,null,null,null))
     }
 }

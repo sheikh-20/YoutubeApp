@@ -6,6 +6,7 @@ import kotlinx.serialization.Serializable
 data class PopularVideo(
     val items: List<Item?>?,
     val kind: String?,
+    val prevPageToken: String?,
     val nextPageToken: String?,
     val pageInfo: PageInfo?
 ) {
@@ -40,7 +41,7 @@ data class PopularVideo(
             data class Thumbnails(
                 val default: Default?,
                 val high: High?,
-                val maxres: Maxres?,
+//                val maxres: Maxres?,
                 val medium: Medium?,
                 val standard: Standard?
             ) {

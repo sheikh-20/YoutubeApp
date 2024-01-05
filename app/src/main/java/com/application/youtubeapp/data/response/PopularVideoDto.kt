@@ -15,6 +15,9 @@ data class PopularVideoDto(
     @SerialName("kind")
     val kind: String?,
 
+    @SerialName("prevPageToken")
+    val prevPageToken: String?,
+
     @SerialName("nextPageToken")
     val nextPageToken: String?,
 
@@ -96,8 +99,8 @@ data class PopularVideoDto(
                 @SerialName("high")
                 val high: High?,
 
-                @SerialName("maxres")
-                val maxres: Maxres?,
+//                @SerialName("maxres")
+//                val maxres: Maxres?,
 
                 @SerialName("medium")
                 val medium: Medium?,

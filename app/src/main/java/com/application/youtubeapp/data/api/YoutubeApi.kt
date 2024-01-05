@@ -21,5 +21,6 @@ interface YoutubeApi {
     suspend fun getPopularVideos(@Query("part") part: String = "snippet",
                                  @Query("chart") chart: String = "mostPopular",
                                  @Query("maxResults") maxResults: Int = 25,
-                                 @Query("regionCode") regionCode: String = "IN"): Response<PopularVideoDto>
+                                 @Query("regionCode") regionCode: String = "IN",
+                                 @Query("pageToken") pageToken: String = "CDIQAA"): Response<PopularVideoDto>
 }

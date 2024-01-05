@@ -3,63 +3,53 @@ package com.application.youtubeapp.data.mappers
 import com.application.youtubeapp.data.response.PopularVideoDto
 import com.application.youtubeapp.domain.model.PopularVideo
 
-fun PopularVideoDto.toDomain(): PopularVideo {
-    return PopularVideo(
-        items = this.items?.map {
-            PopularVideo.Item(
-                kind = it?.kind,
-                id = it?.id,
-                etag = it?.etag,
-                snippet = PopularVideo.Item.Snippet(
-                    categoryId = it?.snippet?.categoryId,
-                    channelId = it?.snippet?.channelId,
-                    channelTitle = it?.snippet?.channelTitle,
+fun PopularVideoDto.Item.toDomain(): PopularVideo.Item {
+    return PopularVideo.Item(
+        kind = this.kind,
+        id = this.id,
+        etag = this.etag,
+        snippet = PopularVideo.Item.Snippet(
+            categoryId = this.snippet?.categoryId,
+            channelId = this.snippet?.channelId,
+            channelTitle = this.snippet?.channelTitle,
 //                    defaultAudioLanguage = it?.snippet?.defaultAudioLanguage,
 //                    defaultLanguage = it?.snippet?.defaultLanguage,
-                    description = it?.snippet?.description,
-                    liveBroadcastContent = it?.snippet?.liveBroadcastContent,
-                    localized = PopularVideo.Item.Snippet.Localized(
-                        description = it?.snippet?.localized?.description,
-                        title = it?.snippet?.localized?.title
-                    ),
-                    publishedAt = it?.snippet?.publishedAt,
+            description = this.snippet?.description,
+            liveBroadcastContent = this.snippet?.liveBroadcastContent,
+            localized = PopularVideo.Item.Snippet.Localized(
+                description = this.snippet?.localized?.description,
+                title = this.snippet?.localized?.title
+            ),
+            publishedAt = this.snippet?.publishedAt,
 //                    tags = it?.snippet?.tags,
-                    thumbnails = PopularVideo.Item.Snippet.Thumbnails(
-                        default = PopularVideo.Item.Snippet.Thumbnails.Default(
-                            height = it?.snippet?.thumbnails?.default?.height,
-                            width = it?.snippet?.thumbnails?.default?.width,
-                            url = it?.snippet?.thumbnails?.default?.url
-                        ),
-                        high = PopularVideo.Item.Snippet.Thumbnails.High(
-                            height = it?.snippet?.thumbnails?.high?.height,
-                            width = it?.snippet?.thumbnails?.high?.width,
-                            url = it?.snippet?.thumbnails?.high?.url
-                        ),
-                        maxres = PopularVideo.Item.Snippet.Thumbnails.Maxres(
-                            height = it?.snippet?.thumbnails?.maxres?.height,
-                            width = it?.snippet?.thumbnails?.maxres?.width,
-                            url = it?.snippet?.thumbnails?.maxres?.url
-                        ),
-                        medium = PopularVideo.Item.Snippet.Thumbnails.Medium(
-                            height = it?.snippet?.thumbnails?.medium?.height,
-                            width = it?.snippet?.thumbnails?.medium?.width,
-                            url = it?.snippet?.thumbnails?.medium?.url
-                        ),
-                        standard = PopularVideo.Item.Snippet.Thumbnails.Standard(
-                            height = it?.snippet?.thumbnails?.standard?.height,
-                            width = it?.snippet?.thumbnails?.standard?.width,
-                            url = it?.snippet?.thumbnails?.standard?.url
-                        ),
-                    ),
-                    title = it?.snippet?.title
-                )
-            )
-        },
-        kind = this.kind,
-        nextPageToken = this.nextPageToken,
-        pageInfo = PopularVideo.PageInfo(
-            resultsPerPage = this.pageInfo?.resultsPerPage,
-            totalResults = this.pageInfo?.totalResults
+            thumbnails = PopularVideo.Item.Snippet.Thumbnails(
+                default = PopularVideo.Item.Snippet.Thumbnails.Default(
+                    height = this.snippet?.thumbnails?.default?.height,
+                    width = this.snippet?.thumbnails?.default?.width,
+                    url = this.snippet?.thumbnails?.default?.url
+                ),
+                high = PopularVideo.Item.Snippet.Thumbnails.High(
+                    height = this.snippet?.thumbnails?.high?.height,
+                    width = this.snippet?.thumbnails?.high?.width,
+                    url = this.snippet?.thumbnails?.high?.url
+                ),
+//                        maxres = PopularVideo.Item.Snippet.Thumbnails.Maxres(
+//                            height = it?.snippet?.thumbnails?.maxres?.height,
+//                            width = it?.snippet?.thumbnails?.maxres?.width,
+//                            url = it?.snippet?.thumbnails?.maxres?.url
+//                        ),
+                medium = PopularVideo.Item.Snippet.Thumbnails.Medium(
+                    height = this.snippet?.thumbnails?.medium?.height,
+                    width = this.snippet?.thumbnails?.medium?.width,
+                    url = this.snippet?.thumbnails?.medium?.url
+                ),
+                standard = PopularVideo.Item.Snippet.Thumbnails.Standard(
+                    height = this.snippet?.thumbnails?.standard?.height,
+                    width = this.snippet?.thumbnails?.standard?.width,
+                    url = this.snippet?.thumbnails?.standard?.url
+                ),
+            ),
+            title = this.snippet?.title
         )
     )
 }
