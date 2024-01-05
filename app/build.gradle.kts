@@ -62,6 +62,7 @@ android {
 dependencies {
 
     val timberVersion = "5.0.1"
+    val paging_version = "3.2.1"
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -105,5 +106,8 @@ dependencies {
 
     // Coil
     implementation("io.coil-kt:coil:2.4.0")
+
+    // Paging 3
+    implementation("androidx.paging:paging-runtime-ktx:$paging_version")
 
 }
