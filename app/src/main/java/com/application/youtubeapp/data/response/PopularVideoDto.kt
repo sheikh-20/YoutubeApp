@@ -16,10 +16,10 @@ data class PopularVideoDto(
     val kind: String?,
 
     @SerialName("prevPageToken")
-    val prevPageToken: String?,
+    val prevPageToken: String? = null,
 
     @SerialName("nextPageToken")
-    val nextPageToken: String?,
+    val nextPageToken: String? = null,
 
     @SerialName("pageInfo")
     val pageInfo: PageInfo?
@@ -106,7 +106,7 @@ data class PopularVideoDto(
                 val medium: Medium?,
 
                 @SerialName("standard")
-                val standard: Standard?
+                val standard: Standard? = null
             ) {
 
                 @Serializable
