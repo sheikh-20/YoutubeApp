@@ -22,5 +22,5 @@ interface YoutubeApi {
                                  @Query("chart") chart: String = "mostPopular",
                                  @Query("maxResults") maxResults: Int = 25,
                                  @Query("regionCode") regionCode: String = "IN",
-                                 @Query("pageToken") pageToken: String = "CDIQAA"): Response<PopularVideoDto>
+                                 @Query("pageToken") pageToken: String = ""): Response<PopularVideoDto>
 }

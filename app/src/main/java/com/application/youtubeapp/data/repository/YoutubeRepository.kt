@@ -7,6 +7,7 @@ import com.application.youtubeapp.data.api.YoutubeApi
 import com.application.youtubeapp.data.response.PopularVideoDto
 import com.application.youtubeapp.data.response.VideoCategoryDto
 import com.application.youtubeapp.paging.VideoPopularPagingSource
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 import javax.inject.Inject
@@ -18,14 +19,14 @@ interface YoutubeRepository {
     fun getPopularVideoPagingFlow(): Flow<PagingData<PopularVideoDto.Item>>
 }
 
-class YoutubeRepositoryImpl @Inject constructor(private val api: YoutubeApi): YoutubeRepository {
+class YoutubeRepositoryImpl @Inject constructor(private val api: YoutubeApi, private val coroutineScope: CoroutineScope): YoutubeRepository {
     override suspend fun getVideoCategories(): Response<VideoCategoryDto> = api.getVideoCategory()
-    override suspend fun getPopularVideo(pageToken: String): Response<PopularVideoDto> = api.getPopularVideos(pageToken)
+    override suspend fun getPopularVideo(pageToken: String): Response<PopularVideoDto> = api.getPopularVideos(pageToken = pageToken)
 
     override fun getPopularVideoPagingFlow(): Flow<PagingData<PopularVideoDto.Item>> = Pager(
         config = PagingConfig(pageSize = 25),
         pagingSourceFactory = {
-            VideoPopularPagingSource(api)
+            VideoPopularPagingSource(api, coroutineScope)
         }
     ).flow
 }
