@@ -1,5 +1,6 @@
 package com.application.youtubeapp.data.api
 
+import com.application.youtubeapp.data.response.ChannelInfoDto
 import com.application.youtubeapp.data.response.LanguageDto
 import com.application.youtubeapp.data.response.PopularVideoDto
 import com.application.youtubeapp.data.response.VideoCategoryDto
@@ -23,4 +24,9 @@ interface YoutubeApi {
                                  @Query("maxResults") maxResults: Int = 25,
                                  @Query("regionCode") regionCode: String = "IN",
                                  @Query("pageToken") pageToken: String = ""): Response<PopularVideoDto>
+
+
+    @GET("youtube/v3/channels")
+    suspend fun getChannelInfo(@Query("part") vararg part: String = arrayOf("snippet", "contentDetails"),
+                               @Query("id") id: String = ""): Response<ChannelInfoDto>
 }

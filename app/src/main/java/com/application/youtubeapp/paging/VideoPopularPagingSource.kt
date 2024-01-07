@@ -29,6 +29,7 @@ class VideoPopularPagingSource(private val api: YoutubeApi, private val coroutin
             val pageToken = params.key ?: ""
 
             Timber.tag("PageToken").d(pageToken)
+
             val apiResult = api.getPopularVideos(pageToken = pageToken)
             val videos = if (apiResult.isSuccessful) {
                 apiResult.body()
@@ -37,6 +38,8 @@ class VideoPopularPagingSource(private val api: YoutubeApi, private val coroutin
             } else {
                 throw Throwable()
             }
+
+
 
             val prevKey = if (pageToken.isEmpty()) null else videos?.prevPageToken
             Timber.tag("PrevKey").d(prevKey)

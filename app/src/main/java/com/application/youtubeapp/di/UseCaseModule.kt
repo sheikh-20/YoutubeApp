@@ -1,6 +1,8 @@
 package com.application.youtubeapp.di
 
 import com.application.youtubeapp.data.repository.YoutubeRepository
+import com.application.youtubeapp.domain.usecase.ChannelInfoUseCase
+import com.application.youtubeapp.domain.usecase.GetChannelInfoInteractor
 import com.application.youtubeapp.domain.usecase.GetVideoCategoryInteractor
 import com.application.youtubeapp.domain.usecase.GetVideoPopularInteractor
 import com.application.youtubeapp.domain.usecase.VideoCategoryUseCase
@@ -25,5 +27,11 @@ object UseCaseModule {
     @Singleton
     fun providesVideoPopularUseCase(youtubeRepository: YoutubeRepository): VideoPopularUseCase {
         return GetVideoPopularInteractor(youtubeRepository)
+    }
+
+    @Provides
+    @Singleton
+    fun providesChannelInfoUseCase(youtubeRepository: YoutubeRepository): ChannelInfoUseCase {
+        return GetChannelInfoInteractor(youtubeRepository);
     }
 }

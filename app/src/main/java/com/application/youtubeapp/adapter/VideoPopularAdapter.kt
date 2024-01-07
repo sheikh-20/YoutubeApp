@@ -2,17 +2,26 @@ package com.application.youtubeapp.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.coroutineScope
+import androidx.lifecycle.findViewTreeLifecycleOwner
+import androidx.lifecycle.lifecycleScope
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.application.youtubeapp.common.Resource
 import com.application.youtubeapp.databinding.VideoViewBinding
 import com.application.youtubeapp.domain.model.PopularVideo
 import com.application.youtubeapp.domain.model.VideoCategory
+import com.application.youtubeapp.domain.usecase.ChannelInfoUseCase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import timber.log.Timber
+import javax.inject.Inject
 
-class VideoPopularAdapter: PagingDataAdapter<PopularVideo.Item, VideoPopularAdapter.VideoPopularViewHolder>(DiffCallback) {
+class VideoPopularAdapter @Inject constructor(private val channelInfoUseCase: ChannelInfoUseCase, private val coroutineScope: CoroutineScope): PagingDataAdapter<PopularVideo.Item, VideoPopularAdapter.VideoPopularViewHolder>(DiffCallback) {
 
     companion object DiffCallback : DiffUtil.ItemCallback<PopularVideo.Item>() {
 
@@ -27,10 +36,27 @@ class VideoPopularAdapter: PagingDataAdapter<PopularVideo.Item, VideoPopularAdap
         }
     }
 
-    class VideoPopularViewHolder(private var binding: VideoViewBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class VideoPopularViewHolder(private var binding: VideoViewBinding): RecyclerView.ViewHolder(binding.root) {
+
         fun bind(popularVideo: PopularVideo.Item) {
             binding.ivVideoThumbnail.load(popularVideo.snippet?.thumbnails?.standard?.url)
             binding.tvVideoTitle.text = popularVideo.snippet?.title
+
+          coroutineScope.launch {
+                val channelThumbnail = channelInfoUseCase(channelId = popularVideo.snippet?.channelId ?: "")
+
+                when (channelThumbnail) {
+                    is Resource.Loading -> {}
+                    is Resource.Failure -> {
+                        Timber.tag(TAG).e(channelThumbnail.throwable)
+                    }
+                    is Resource.Success -> {
+                        val url = channelThumbnail.data.items?.first()?.snippet?.thumbnails?.default?.url
+                        Timber.tag(TAG).d(url)
+                        binding.ivChannelPic.load(url)
+                    }
+                }
+            }
         }
     }
 
