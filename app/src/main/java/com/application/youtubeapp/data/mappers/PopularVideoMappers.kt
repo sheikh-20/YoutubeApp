@@ -49,7 +49,7 @@ fun PopularVideoDto.Item.toDomain(): PopularVideo.Item {
                     url = this.snippet?.thumbnails?.standard?.url
                 ),
             ),
-            title = this.snippet?.title
+            title = this.snippet?.title,
         )
     )
 }

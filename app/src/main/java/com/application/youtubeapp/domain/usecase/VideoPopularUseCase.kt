@@ -26,5 +26,4 @@ class GetVideoPopularInteractor(private val repository: YoutubeRepository): Vide
             popularVideoDto.toDomain()
         }
     }
-
 }

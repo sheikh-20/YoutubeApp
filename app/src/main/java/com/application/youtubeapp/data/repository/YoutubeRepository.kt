@@ -4,6 +4,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.application.youtubeapp.data.api.YoutubeApi
+import com.application.youtubeapp.data.response.ChannelInfoDto
 import com.application.youtubeapp.data.response.PopularVideoDto
 import com.application.youtubeapp.data.response.VideoCategoryDto
 import com.application.youtubeapp.paging.VideoPopularPagingSource
@@ -17,6 +18,8 @@ interface YoutubeRepository {
     suspend fun getPopularVideo(pageToken: String = ""): Response<PopularVideoDto>
 
     fun getPopularVideoPagingFlow(): Flow<PagingData<PopularVideoDto.Item>>
+
+    suspend fun getChannelInfo(channelId: String = ""): Response<ChannelInfoDto>
 }
 
 class YoutubeRepositoryImpl @Inject constructor(private val api: YoutubeApi, private val coroutineScope: CoroutineScope): YoutubeRepository {
@@ -29,4 +32,6 @@ class YoutubeRepositoryImpl @Inject constructor(private val api: YoutubeApi, pri
             VideoPopularPagingSource(api, coroutineScope)
         }
     ).flow
+
+    override suspend fun getChannelInfo(channelId: String): Response<ChannelInfoDto> = api.getChannelInfo(id = channelId)
 }

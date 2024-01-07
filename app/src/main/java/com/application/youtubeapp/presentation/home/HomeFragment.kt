@@ -17,6 +17,7 @@ import com.application.youtubeapp.presentation.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -25,7 +26,9 @@ class HomeFragment : Fragment() {
     private val homeViewModel: HomeViewModel by viewModels()
 
     private lateinit var adapter: VideoCategoryAdapter
-    private lateinit var videoPopularAdapter: VideoPopularAdapter
+
+    @Inject
+    lateinit var videoPopularAdapter: VideoPopularAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,7 +46,7 @@ class HomeFragment : Fragment() {
         adapter = VideoCategoryAdapter()
         binding.rvVideoCategory.adapter = adapter
 
-        videoPopularAdapter = VideoPopularAdapter()
+
         binding.rvVideoPopular.adapter = videoPopularAdapter
 
         homeViewModel.videoCategory.observe(viewLifecycleOwner) {
