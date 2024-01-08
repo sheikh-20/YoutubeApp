@@ -1,5 +1,7 @@
 package com.application.youtubeapp.adapter
 
+import android.app.Activity
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.LifecycleOwner
@@ -16,6 +18,8 @@ import com.application.youtubeapp.databinding.VideoViewBinding
 import com.application.youtubeapp.domain.model.PopularVideo
 import com.application.youtubeapp.domain.model.VideoCategory
 import com.application.youtubeapp.domain.usecase.ChannelInfoUseCase
+import com.application.youtubeapp.presentation.detail.DetailActivity
+import dagger.hilt.android.internal.managers.ViewComponentManager
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -41,6 +45,14 @@ class VideoPopularAdapter @Inject constructor(private val channelInfoUseCase: Ch
         fun bind(popularVideo: PopularVideo.Item) {
             binding.ivVideoThumbnail.load(popularVideo.snippet?.thumbnails?.standard?.url)
             binding.tvVideoTitle.text = popularVideo.snippet?.title
+            binding.root.setOnClickListener {
+                val context = if (itemView.context is ViewComponentManager.FragmentContextWrapper)
+                    (itemView.context as ViewComponentManager.FragmentContextWrapper).baseContext
+                else
+                    itemView.context
+
+                DetailActivity.startActivity(context as Activity)
+            }
 
           coroutineScope.launch {
                 val channelThumbnail = channelInfoUseCase(channelId = popularVideo.snippet?.channelId ?: "")
