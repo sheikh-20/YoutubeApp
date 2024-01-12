@@ -8,4 +8,9 @@
     <string name="shorts_thumbnail">shorts thumbnail</string>
     <string name="settings">settings</string>
     <string name="expand">expand</string>
+    <string name="like">like</string>
+    <string name="dislike">dislike</string>
+    <string name="share">share</string>
+    <string name="download">Download</string>
+    <string name="playlist">Playlist</string>
 </resources>
