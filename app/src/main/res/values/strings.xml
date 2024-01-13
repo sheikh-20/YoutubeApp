@@ -13,4 +13,7 @@
     <string name="share">share</string>
     <string name="download">Download</string>
     <string name="playlist">Playlist</string>
+    <string name="subscribe">subscribe</string>
+    <string name="comments">Comments</string>
+    <string name="unfold_more">Unfold more</string>
 </resources>
