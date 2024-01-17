@@ -4,8 +4,10 @@ import com.application.youtubeapp.data.repository.YoutubeRepository
 import com.application.youtubeapp.domain.usecase.ChannelInfoUseCase
 import com.application.youtubeapp.domain.usecase.GetChannelInfoInteractor
 import com.application.youtubeapp.domain.usecase.GetVideoCategoryInteractor
+import com.application.youtubeapp.domain.usecase.GetVideoDetailInteractor
 import com.application.youtubeapp.domain.usecase.GetVideoPopularInteractor
 import com.application.youtubeapp.domain.usecase.VideoCategoryUseCase
+import com.application.youtubeapp.domain.usecase.VideoDetailUseCase
 import com.application.youtubeapp.domain.usecase.VideoPopularUseCase
 import dagger.Module
 import dagger.Provides
@@ -33,5 +35,11 @@ object UseCaseModule {
     @Singleton
     fun providesChannelInfoUseCase(youtubeRepository: YoutubeRepository): ChannelInfoUseCase {
         return GetChannelInfoInteractor(youtubeRepository);
+    }
+
+    @Provides
+    @Singleton
+    fun providesVideoDetailUseCase(youtubeRepository: YoutubeRepository): VideoDetailUseCase {
+        return GetVideoDetailInteractor(youtubeRepository)
     }
 }

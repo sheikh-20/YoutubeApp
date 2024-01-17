@@ -81,6 +81,12 @@ data class VideoDetailDto(
             @SerialName("channelTitle")
             val channelTitle: String? = null,
 
+            @SerialName("defaultAudioLanguage")
+            val defaultAudioLanguage: String? = null,
+
+            @SerialName("defaultLanguage")
+            val defaultLanguage: String? = null,
+
             @SerialName("description")
             val description: String? = null,
 
@@ -92,6 +98,9 @@ data class VideoDetailDto(
 
             @SerialName("publishedAt")
             val publishedAt: String? = null,
+
+            @SerialName("tags")
+            val tags: List<String?>? = null,
 
             @SerialName("thumbnails")
             val thumbnails: Thumbnails? = null,

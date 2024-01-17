@@ -355,13 +355,20 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true">
 
-        <androidx.media3.ui.PlayerView
+<!--        <androidx.media3.ui.PlayerView-->
+<!--            android:id="@+id/pv_video"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="200dp"-->
+<!--            />-->
+
+        <ImageView
             android:id="@+id/pv_video"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            />
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"/>
 
         <TextView
+            android:id="@+id/tv_duration"
             style="@style/TextAppearance.Material3.BodySmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
