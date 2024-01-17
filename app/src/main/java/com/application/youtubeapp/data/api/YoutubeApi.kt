@@ -4,6 +4,7 @@ import com.application.youtubeapp.data.response.ChannelInfoDto
 import com.application.youtubeapp.data.response.LanguageDto
 import com.application.youtubeapp.data.response.PopularVideoDto
 import com.application.youtubeapp.data.response.VideoCategoryDto
+import com.application.youtubeapp.data.response.VideoDetailDto
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -29,4 +30,9 @@ interface YoutubeApi {
     @GET("youtube/v3/channels")
     suspend fun getChannelInfo(@Query("part") vararg part: String = arrayOf("snippet", "contentDetails"),
                                @Query("id") id: String = ""): Response<ChannelInfoDto>
+
+
+    @GET("youtube/v3/videos")
+    suspend fun getVideoDetails(@Query("part") vararg part: String = arrayOf("snippet", "contentDetails"),
+                                @Query("id") id: String = ""): Response<VideoDetailDto>
 }

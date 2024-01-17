@@ -7,6 +7,7 @@ import com.application.youtubeapp.data.api.YoutubeApi
 import com.application.youtubeapp.data.response.ChannelInfoDto
 import com.application.youtubeapp.data.response.PopularVideoDto
 import com.application.youtubeapp.data.response.VideoCategoryDto
+import com.application.youtubeapp.data.response.VideoDetailDto
 import com.application.youtubeapp.paging.VideoPopularPagingSource
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
@@ -20,6 +21,8 @@ interface YoutubeRepository {
     fun getPopularVideoPagingFlow(): Flow<PagingData<PopularVideoDto.Item>>
 
     suspend fun getChannelInfo(channelId: String = ""): Response<ChannelInfoDto>
+
+    suspend fun getVideoDetails(videoId: String = ""): Response<VideoDetailDto>
 }
 
 class YoutubeRepositoryImpl @Inject constructor(private val api: YoutubeApi, private val coroutineScope: CoroutineScope): YoutubeRepository {
@@ -34,4 +37,6 @@ class YoutubeRepositoryImpl @Inject constructor(private val api: YoutubeApi, pri
     ).flow
 
     override suspend fun getChannelInfo(channelId: String): Response<ChannelInfoDto> = api.getChannelInfo(id = channelId)
+
+    override suspend fun getVideoDetails(videoId: String): Response<VideoDetailDto> = api.getVideoDetails(id = videoId)
 }
