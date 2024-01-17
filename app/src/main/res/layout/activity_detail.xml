@@ -238,12 +238,14 @@
                         android:layout_weight="1">
 
                         <TextView
+                            android:id="@+id/tv_channel_title"
                             style="@style/TextAppearance.Material3.BodyLarge"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             tools:text="The Beauty of existence" />
 
                         <TextView
+                            android:id="@+id/tv_subscribers"
                             style="@style/TextAppearance.Material3.BodySmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
