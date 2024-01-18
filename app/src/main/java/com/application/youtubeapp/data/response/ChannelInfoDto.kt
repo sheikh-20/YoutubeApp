@@ -25,6 +25,9 @@ data class ChannelInfoDto(
         @SerialName("contentDetails")
         val contentDetails: ContentDetails? = null,
 
+        @SerialName("statistics")
+        val statistics: Statistics? = null,
+
         @SerialName("etag")
         val etag: String? = null,
 
@@ -55,6 +58,22 @@ data class ChannelInfoDto(
                 val uploads: String? = null
             )
         }
+
+        @Serializable
+        data class Statistics(
+
+            @SerialName("viewCount")
+            val viewCount: String? = null,
+
+            @SerialName("subscriberCount")
+            val subscriberCount: String? = null,
+
+            @SerialName("hiddenSubscriberCount")
+            val hiddenSubscriberCount: Boolean? = null,
+
+            @SerialName("videoCount")
+            val videoCount: String? = null
+        )
 
         @Serializable
         data class Snippet(

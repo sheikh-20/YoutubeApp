@@ -1,5 +1,8 @@
 package com.application.youtubeapp.domain.model
 
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
 data class ChannelInfo(
     val etag: String?,
     val items: List<Item?>?,
@@ -7,6 +10,7 @@ data class ChannelInfo(
 ) {
     data class Item(
         val contentDetails: ContentDetails?,
+        val statistics: Statistics?,
         val etag: String?,
         val id: String?,
         val kind: String?,
@@ -20,6 +24,13 @@ data class ChannelInfo(
                 val uploads: String?
             )
         }
+
+        data class Statistics(
+            val viewCount: String? = null,
+            val subscriberCount: String? = null,
+            val hiddenSubscriberCount: Boolean? = null,
+            val videoCount: String? = null
+        )
 
         data class Snippet(
             val country: String?,

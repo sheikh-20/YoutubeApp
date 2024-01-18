@@ -127,7 +127,7 @@
                             style="@style/TextAppearance.Material3.BodySmall"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            tools:text="23" />
+                            android:text="0" />
 
                     </LinearLayout>
 
@@ -285,6 +285,7 @@
                             android:text="@string/comments" />
 
                         <TextView
+                            android:id="@+id/tv_comment"
                             style="@style/TextAppearance.Material3.BodyMedium"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"

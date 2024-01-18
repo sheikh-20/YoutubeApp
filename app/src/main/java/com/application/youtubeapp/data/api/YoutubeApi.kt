@@ -28,11 +28,11 @@ interface YoutubeApi {
 
 
     @GET("youtube/v3/channels")
-    suspend fun getChannelInfo(@Query("part") vararg part: String = arrayOf("snippet", "contentDetails"),
+    suspend fun getChannelInfo(@Query("part") vararg part: String = arrayOf("snippet", "contentDetails", "statistics"),
                                @Query("id") id: String = ""): Response<ChannelInfoDto>
 
 
     @GET("youtube/v3/videos")
-    suspend fun getVideoDetails(@Query("part") vararg part: String = arrayOf("snippet", "contentDetails"),
+    suspend fun getVideoDetails(@Query("part") vararg part: String = arrayOf("snippet", "contentDetails", "statistics"),
                                 @Query("id") id: String = ""): Response<VideoDetailDto>
 }

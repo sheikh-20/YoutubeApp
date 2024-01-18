@@ -18,6 +18,12 @@ fun ChannelInfoDto.toDomain(): ChannelInfo {
                         uploads = it?.contentDetails?.relatedPlaylists?.uploads
                     )
                 ),
+                statistics = ChannelInfo.Item.Statistics(
+                    viewCount = it?.statistics?.viewCount,
+                    subscriberCount = it?.statistics?.subscriberCount,
+                    hiddenSubscriberCount = it?.statistics?.hiddenSubscriberCount,
+                    videoCount = it?.statistics?.videoCount
+                ),
                 id = it?.id,
                 kind = it?.kind,
                 etag = it?.etag,

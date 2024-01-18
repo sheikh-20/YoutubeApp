@@ -53,10 +53,16 @@ class DetailActivity: BaseActivity() {
 
                     binding.pvVideo.load(videoItem?.snippet?.thumbnails?.high?.url)
                     binding.tvDuration.text = videoItem?.contentDetails?.duration
-                    binding.tvVideoTitle.text = videoItem?.snippet?.title
 
+                    binding.tvViews.text = videoItem?.statistics?.viewCount
+                    binding.tvLike.text = videoItem?.statistics?.likeCount
+                    binding.tvComment.text = videoItem?.statistics?.commentCount
+                    binding.tvUploadDate.text = videoItem?.snippet?.publishedAt
+
+                    binding.tvVideoTitle.text = videoItem?.snippet?.title
                     binding.tvChannelTitle.text = channelItem?.snippet?.title
                     binding.ivChannelPic.load(channelItem?.snippet?.thumbnails?.high?.url)
+                    binding.tvSubscribers.text = channelItem?.statistics?.subscriberCount
 
                 }
             }
