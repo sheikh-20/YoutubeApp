@@ -25,6 +25,9 @@ data class VideoDetailDto(
         @SerialName("contentDetails")
         val contentDetails: ContentDetails? = null,
 
+        @SerialName("statistics")
+        val statistics: Statistics? = null,
+
         @SerialName("etag")
         val etag: String? = null,
 
@@ -69,6 +72,21 @@ data class VideoDetailDto(
                 val ytRating: String? = null
             )
         }
+
+        @Serializable
+        data class Statistics(
+            @SerialName("viewCount")
+            val viewCount: String? = null,
+
+            @SerialName("likeCount")
+            val likeCount: String? = null,
+
+            @SerialName("favoriteCount")
+            val favoriteCount: String? = null,
+
+            @SerialName("commentCount")
+            val commentCount: String? = null
+        )
 
         @Serializable
         data class Snippet(

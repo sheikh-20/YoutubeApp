@@ -23,6 +23,12 @@ fun VideoDetailDto.toDomain(): VideoDetail {
                     licensedContent = it?.contentDetails?.licensedContent,
                     projection = it?.contentDetails?.projection
                 ),
+                statistics = VideoDetail.Item.Statistics(
+                    viewCount = it?.statistics?.viewCount,
+                    likeCount = it?.statistics?.likeCount,
+                    favoriteCount = it?.statistics?.favoriteCount,
+                    commentCount = it?.statistics?.commentCount
+                ),
                 snippet = VideoDetail.Item.Snippet(
                     categoryId = it?.snippet?.categoryId,
                     channelId = it?.snippet?.channelId,
