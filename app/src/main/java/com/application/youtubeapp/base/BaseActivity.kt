@@ -6,7 +6,7 @@ import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
 
-open class BaseActivity: AppCompatActivity() {
+abstract class BaseActivity: AppCompatActivity() {
     fun setTransparentStatusBar() {
         this.let {
             it.window?.let {
@@ -18,4 +18,6 @@ open class BaseActivity: AppCompatActivity() {
             }
         }
     }
+
+    abstract fun observerViewModel()
 }

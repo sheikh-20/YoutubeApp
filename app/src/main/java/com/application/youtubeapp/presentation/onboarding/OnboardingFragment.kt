@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.application.youtubeapp.R
 import com.application.youtubeapp.adapter.OnboardWelcomeAdapter
@@ -35,5 +36,9 @@ class OnboardingFragment : Fragment() {
         TabLayoutMediator(binding.tabLayout, viewPager) { tab, position ->
             tab.view.isEnabled = false
         }.attach()
+
+        binding.nextBtn.setOnClickListener {
+            findNavController().navigate( OnboardingFragmentDirections.actionOnboardingFragmentToLoginFragment())
+        }
     }
 }

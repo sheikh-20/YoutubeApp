@@ -9,6 +9,7 @@ import com.application.youtubeapp.base.BaseActivity
 import com.application.youtubeapp.common.Resource
 import com.application.youtubeapp.databinding.ActivityDetailBinding
 import com.application.youtubeapp.presentation.viewmodel.DetailViewModel
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -31,13 +32,7 @@ class DetailActivity: BaseActivity() {
         setTransparentStatusBar()
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        binding = ActivityDetailBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        detailViewModel.getVideoDetailsWithInfo(intent.getStringExtra(VIDEO_ID) ?:  return)
+    override fun observerViewModel() {
         detailViewModel.videoDetailWithInfo.observe(this) {
             when (it) {
                 is Resource.Loading -> {
@@ -65,6 +60,76 @@ class DetailActivity: BaseActivity() {
                     binding.tvSubscribers.text = channelItem?.statistics?.subscriberCount
 
                 }
+            }
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        binding = ActivityDetailBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        detailViewModel.getVideoDetailsWithInfo(intent.getStringExtra(VIDEO_ID) ?:  return)
+        observerViewModel()
+
+        binding.apply {
+            llLike.setOnClickListener {
+                Snackbar.make(binding.root, "Login to use like button", Snackbar.LENGTH_SHORT).show()
+            }
+            ivLike.setOnClickListener {
+                Snackbar.make(binding.root, "Login to use like button", Snackbar.LENGTH_SHORT).show()
+            }
+            tvLike.setOnClickListener {
+                Snackbar.make(binding.root, "Login to use like button", Snackbar.LENGTH_SHORT).show()
+            }
+
+
+            llDislike.setOnClickListener {
+                Snackbar.make(binding.root, "Login to use dislike button", Snackbar.LENGTH_SHORT).show()
+            }
+            ivDislike.setOnClickListener {
+                Snackbar.make(binding.root, "Login to use dislike button", Snackbar.LENGTH_SHORT).show()
+            }
+            tvDislike.setOnClickListener {
+                Snackbar.make(binding.root, "Login to use dislike button", Snackbar.LENGTH_SHORT).show()
+            }
+
+
+            llShare.setOnClickListener {
+                Snackbar.make(binding.root, "Login to use share button", Snackbar.LENGTH_SHORT).show()
+            }
+            ivShare.setOnClickListener {
+                Snackbar.make(binding.root, "Login to use share button", Snackbar.LENGTH_SHORT).show()
+            }
+            tvShare.setOnClickListener {
+                Snackbar.make(binding.root, "Login to use share button", Snackbar.LENGTH_SHORT).show()
+            }
+
+
+            llDownload.setOnClickListener {
+                Snackbar.make(binding.root, "Login to use download button", Snackbar.LENGTH_SHORT).show()
+            }
+            ivDownload.setOnClickListener {
+                Snackbar.make(binding.root, "Login to use download button", Snackbar.LENGTH_SHORT).show()
+            }
+            tvDownload.setOnClickListener {
+                Snackbar.make(binding.root, "Login to use download button", Snackbar.LENGTH_SHORT).show()
+            }
+
+
+            llPlaylist.setOnClickListener {
+                Snackbar.make(binding.root, "Login to use playlist button", Snackbar.LENGTH_SHORT).show()
+            }
+            ivPlaylist.setOnClickListener {
+                Snackbar.make(binding.root, "Login to use playlist button", Snackbar.LENGTH_SHORT).show()
+            }
+            tvPlaylist.setOnClickListener {
+                Snackbar.make(binding.root, "Login to use playlist button", Snackbar.LENGTH_SHORT).show()
+            }
+
+            tvSubscribeBtn.setOnClickListener {
+                Snackbar.make(binding.root, "Login to use subscribe button", Snackbar.LENGTH_SHORT).show()
             }
         }
     }

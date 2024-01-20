@@ -21,16 +21,8 @@
             android:exported="true"
             android:theme="@style/Theme.YoutubeApp" />
 
-
         <activity
             android:name=".presentation.onboarding.OnboardingActivity"
-            android:exported="true"
-            android:theme="@style/Theme.YoutubeApp.Splash">
-
-        </activity>
-
-        <activity
-            android:name=".presentation.home.HomeActivity"
             android:exported="true"
             android:theme="@style/Theme.YoutubeApp.Splash">
 
@@ -39,6 +31,15 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name=".presentation.home.HomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.YoutubeApp.Splash">
+
+
 
         </activity>
     </application>
