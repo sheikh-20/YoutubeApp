@@ -82,6 +82,7 @@
                     android:baselineAligned="false">
 
                     <LinearLayout
+                        android:id="@+id/ll_like"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -107,6 +108,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/ll_dislike"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -132,6 +134,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/ll_share"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -157,6 +160,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/ll_download"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -181,6 +185,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/ll_playlist"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
@@ -253,6 +258,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/tv_subscribe_btn"
                         style="@style/TextAppearance.Material3.BodyLarge"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
