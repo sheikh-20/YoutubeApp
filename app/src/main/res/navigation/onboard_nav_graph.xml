@@ -9,7 +9,11 @@
         android:id="@+id/loginFragment"
         android:name="com.application.youtubeapp.presentation.onboarding.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_loginWithPasswordFragment"
+            app:destination="@id/loginWithPasswordFragment" />
+    </fragment>
     <fragment
         android:id="@+id/onboardingFragment"
         android:name="com.application.youtubeapp.presentation.onboarding.OnboardingFragment"
@@ -18,4 +22,9 @@
             android:id="@+id/action_onboardingFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/loginWithPasswordFragment"
+        android:name="com.application.youtubeapp.presentation.onboarding.login.LoginWithPasswordFragment"
+        android:label="fragment_login_with_password"
+        tools:layout="@layout/fragment_login_with_password" />
 </navigation>
