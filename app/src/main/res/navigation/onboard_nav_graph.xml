@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_loginFragment_to_loginWithPasswordFragment"
             app:destination="@id/loginWithPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_signupWithPasswordFragment"
+            app:destination="@id/signupWithPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/onboardingFragment"
@@ -26,5 +29,18 @@
         android:id="@+id/loginWithPasswordFragment"
         android:name="com.application.youtubeapp.presentation.onboarding.login.LoginWithPasswordFragment"
         android:label="fragment_login_with_password"
-        tools:layout="@layout/fragment_login_with_password" />
+        tools:layout="@layout/fragment_login_with_password" >
+        <action
+            android:id="@+id/action_loginWithPasswordFragment_to_signupWithPasswordFragment"
+            app:destination="@id/signupWithPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupWithPasswordFragment"
+        android:name="com.application.youtubeapp.presentation.onboarding.signup.SignupWithPasswordFragment"
+        android:label="fragment_signup_with_password"
+        tools:layout="@layout/fragment_signup_with_password" >
+        <action
+            android:id="@+id/action_signupWithPasswordFragment_to_loginWithPasswordFragment"
+            app:destination="@id/loginWithPasswordFragment" />
+    </fragment>
 </navigation>

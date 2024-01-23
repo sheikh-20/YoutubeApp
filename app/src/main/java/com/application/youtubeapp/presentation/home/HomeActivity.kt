@@ -1,5 +1,7 @@
 package com.application.youtubeapp.presentation.home
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -19,6 +21,13 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 
 @AndroidEntryPoint
 class HomeActivity : BaseActivity() {
+
+    companion object {
+        fun startActivity(activity: Activity?) {
+            val intent = Intent(activity, HomeActivity::class.java)
+            activity?.startActivity(intent)
+        }
+    }
 
     private lateinit var binding: ActivityMainBinding
     private val onboardingViewModel: OnboardingViewModel by viewModels()
