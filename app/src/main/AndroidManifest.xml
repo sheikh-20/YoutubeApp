@@ -15,33 +15,29 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.YoutubeApp.Splash"
         tools:targetApi="31">
-
+        <activity
+            android:name=".presentation.accountsetup.AccountSetupActivity"
+            android:exported="false"
+            android:label="@string/title_activity_account_setup"
+            android:theme="@style/Theme.YoutubeApp.Splash" />
         <activity
             android:name=".presentation.detail.DetailActivity"
             android:exported="true"
             android:theme="@style/Theme.YoutubeApp" />
-
         <activity
             android:name=".presentation.onboarding.OnboardingActivity"
             android:exported="true"
             android:theme="@style/Theme.YoutubeApp.Splash">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".presentation.home.HomeActivity"
             android:exported="true"
-            android:theme="@style/Theme.YoutubeApp.Splash">
-
-
-
-        </activity>
+            android:theme="@style/Theme.YoutubeApp.Splash"></activity>
     </application>
 
 </manifest>
