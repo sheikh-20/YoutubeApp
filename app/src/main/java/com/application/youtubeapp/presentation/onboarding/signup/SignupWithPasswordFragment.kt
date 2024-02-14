@@ -27,5 +27,9 @@ class SignupWithPasswordFragment : Fragment() {
         binding.tvLogin.setOnClickListener {
             findNavController().navigate(SignupWithPasswordFragmentDirections.actionSignupWithPasswordFragmentToLoginWithPasswordFragment())
         }
+
+        binding.tvResetPassword.setOnClickListener {
+            findNavController().navigate(SignupWithPasswordFragmentDirections.actionSignupWithPasswordFragmentToResetPasswordFragment())
+        }
     }
 }
