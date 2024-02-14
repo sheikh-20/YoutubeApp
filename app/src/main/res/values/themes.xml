@@ -12,5 +12,5 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.YoutubeApp.Splash" parent="Base.Theme.YoutubeApp.Splash" />
+<!--    <style name="Theme.YoutubeApp.Splash" parent="Base.Theme.YoutubeApp.Splash" />-->
 </resources>

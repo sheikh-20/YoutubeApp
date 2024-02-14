@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_loginWithPasswordFragment_to_signupWithPasswordFragment"
             app:destination="@id/signupWithPasswordFragment" />
+        <action
+            android:id="@+id/action_loginWithPasswordFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/signupWithPasswordFragment"
@@ -42,5 +45,13 @@
         <action
             android:id="@+id/action_signupWithPasswordFragment_to_loginWithPasswordFragment"
             app:destination="@id/loginWithPasswordFragment" />
+        <action
+            android:id="@+id/action_signupWithPasswordFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.application.youtubeapp.presentation.onboarding.resetpassword.ResetPasswordFragment"
+        android:label="fragment_reset_password"
+        tools:layout="@layout/fragment_reset_password" />
 </navigation>
