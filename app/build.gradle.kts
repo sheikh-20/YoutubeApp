@@ -61,13 +61,10 @@ android {
 
 dependencies {
 
-    val timberVersion = "5.0.1"
-    val paging_version = "3.2.1"
-
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.8.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.android.material)
+    implementation(libs.androidx.constraint.layout)
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -83,37 +80,36 @@ dependencies {
 
 
     // Timber for log
-    implementation("com.jakewharton.timber:timber:$timberVersion")
+    implementation(libs.timber)
 
     // Splash screen
-    implementation("androidx.core:core-splashscreen:1.1.0-alpha02")
+    implementation(libs.androidx.splash)
 
     // Material icon extended
-    implementation("androidx.compose.material:material-icons-extended:1.6.0-alpha02")
+    implementation(libs.androidx.material.icon)
 
     // Retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.3")
+    implementation(libs.retrofit)
+    implementation(libs.okhttp)
 
     // Retrofit with Scalar Converter
-    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
+    implementation(libs.scalar.converter)
 
     // Kotlin Serialization
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+    implementation(libs.kotlin.serialization)
 
     // Retrofit with Jakewharton Converter
-    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
+    implementation(libs.jakewharton.converter )
 
     // Coil
-    implementation("io.coil-kt:coil:2.4.0")
+    implementation(libs.coil)
 
     // Paging 3
-    implementation("androidx.paging:paging-runtime-ktx:$paging_version")
+    implementation(libs.androidx.paging.ktx)
 
-
-    implementation("androidx.media3:media3-exoplayer:1.2.0")
-    implementation("androidx.media3:media3-exoplayer-dash:1.2.0")
-    implementation("androidx.media3:media3-ui:1.2.0")
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.exoplayer.dash)
+    implementation(libs.androidx.media3.ui)
 
 
 }
