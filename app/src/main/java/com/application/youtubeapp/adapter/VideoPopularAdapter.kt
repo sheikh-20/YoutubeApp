@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import coil.size.Precision
+import coil.size.Scale
 import com.application.youtubeapp.common.Resource
 import com.application.youtubeapp.databinding.VideoViewBinding
 import com.application.youtubeapp.domain.model.PopularVideo
@@ -43,7 +45,10 @@ class VideoPopularAdapter @Inject constructor(private val channelInfoUseCase: Ch
     inner class VideoPopularViewHolder(private var binding: VideoViewBinding): RecyclerView.ViewHolder(binding.root) {
 
         fun bind(popularVideo: PopularVideo.Item) {
-            binding.ivVideoThumbnail.load(popularVideo.snippet?.thumbnails?.standard?.url)
+            binding.ivVideoThumbnail.load(popularVideo.snippet?.thumbnails?.high?.url) {
+                scale(Scale.FILL)
+                precision(Precision.EXACT)
+            }
             binding.tvVideoTitle.text = popularVideo.snippet?.title
             binding.root.setOnClickListener {
                 val context = if (itemView.context is ViewComponentManager.FragmentContextWrapper)

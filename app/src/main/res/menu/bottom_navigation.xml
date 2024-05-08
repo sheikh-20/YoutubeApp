@@ -4,9 +4,9 @@
         android:title="Home"
         android:icon="@drawable/home_24px" />
 
-    <item android:id="@+id/shortsFragment"
-        android:title="Shorts"
-        android:icon="@drawable/equalizer_24px"/>
+    <item android:id="@+id/downloadsFragment"
+        android:title="Downloads"
+        android:icon="@drawable/ic_download"/>
 
     <item android:id="@+id/subscriptionFragment"
         android:title="Subscription"
