@@ -11,10 +11,10 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/shortsFragment"
-        android:name="com.application.youtubeapp.presentation.home.ShortsFragment"
-        android:label="fragment_shorts"
-        tools:layout="@layout/fragment_shorts" />
+        android:id="@+id/downloadsFragment"
+        android:name="com.application.youtubeapp.presentation.home.DownloadsFragment"
+        android:label="fragment_downloads"
+        tools:layout="@layout/fragment_downloads" />
     <fragment
         android:id="@+id/subscriptionFragment"
         android:name="com.application.youtubeapp.presentation.home.SubscriptionFragment"

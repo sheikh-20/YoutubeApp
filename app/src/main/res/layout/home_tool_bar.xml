@@ -13,7 +13,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingHorizontal="16dp">
 
         <ImageView
             android:id="@+id/iv_youtube"
@@ -50,37 +51,22 @@
             >
 
             <ImageView
-                android:id="@+id/iv_cast"
+                android:id="@+id/iv_search"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/cast_24px"
-                android:layout_marginHorizontal="8dp"
-                android:contentDescription="@string/app_name" />
+                android:src="@drawable/search_24px"
+                android:contentDescription="@string/app_name"
+                />
+
+            <Space
+                android:layout_width="32dp"
+                android:layout_height="wrap_content"/>
 
             <ImageView
                 android:id="@+id/iv_notification"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/notifications_24px"
-                android:layout_marginHorizontal="8dp"
-                android:contentDescription="@string/app_name"
-                />
-
-            <ImageView
-                android:id="@+id/iv_search"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/search_24px"
-                android:layout_marginHorizontal="8dp"
-                android:contentDescription="@string/app_name"
-                />
-
-            <ImageView
-                android:id="@+id/iv_profile"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/person_24px"
-                android:layout_marginHorizontal="8dp"
                 android:contentDescription="@string/app_name"
                 />
 
