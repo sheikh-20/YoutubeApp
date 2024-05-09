@@ -16,6 +16,8 @@ import com.application.youtubeapp.R
 import com.application.youtubeapp.base.BaseActivity
 import com.application.youtubeapp.databinding.ActivityMainBinding
 import com.application.youtubeapp.presentation.viewmodel.OnboardingViewModel
+import com.google.android.material.shape.CornerFamily
+import com.google.android.material.shape.MaterialShapeDrawable
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.lifecycle.HiltViewModel
 
@@ -57,8 +59,5 @@ class HomeActivity : BaseActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
         binding.bottomNavigation.setupWithNavController(navController)
-
-
-
     }
 }

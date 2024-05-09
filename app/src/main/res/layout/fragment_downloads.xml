@@ -5,13 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".presentation.home.DownloadsFragment">
 
-    <TextView
-        style="@style/TextAppearance.Material3.BodyLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Download Screen"
-        android:layout_centerInParent="true"
-        android:textStyle="bold"
-        />
+    <include android:id="@+id/top_bar" layout="@layout/download_tool_bar" />
 
 </RelativeLayout>
