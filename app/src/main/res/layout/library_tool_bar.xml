@@ -16,30 +16,17 @@
         android:layout_height="match_parent"
         android:paddingHorizontal="16dp">
 
-        <ImageView
-            android:id="@+id/iv_youtube"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:src="@drawable/youtube_activity_24px"
-            app:tint="#FFFF0000"
-            android:layout_marginHorizontal="8dp"
-            android:contentDescription="@string/app_name"
-            android:layout_centerVertical="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"/>
-
         <TextView
             android:id="@+id/tv_app_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/youtube"
+            android:text="Profile"
             android:layout_marginHorizontal="4dp"
-            android:layout_toEndOf="@id/iv_youtube"
+            android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             style="@style/TextAppearance.Material3.TitleLarge"
             android:fontFamily="sans-serif-medium"
-             />
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -48,26 +35,13 @@
             android:layout_centerVertical="true"
             android:gravity="center_vertical"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            >
+            android:layout_alignParentEnd="true">
 
             <ImageView
                 android:id="@+id/iv_search"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/search_24px"
-                android:contentDescription="@string/app_name"
-                />
-
-            <Space
-                android:layout_width="32dp"
-                android:layout_height="wrap_content"/>
-
-            <ImageView
-                android:id="@+id/iv_notification"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/notifications_24px"
                 android:contentDescription="@string/app_name"
                 />
 

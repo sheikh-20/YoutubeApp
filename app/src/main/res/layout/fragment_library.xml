@@ -6,10 +6,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.home.LibraryFragment">
 
+    <include android:id="@+id/top_bar" layout="@layout/library_tool_bar" />
+
+
     <LinearLayout
         android:id="@+id/ll_recent_video"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/top_bar"
         android:orientation="vertical">
 
         <TextView
