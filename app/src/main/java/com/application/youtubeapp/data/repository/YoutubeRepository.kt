@@ -18,7 +18,7 @@ interface YoutubeRepository {
     suspend fun getVideoCategories(): Response<VideoCategoryDto>
     suspend fun getPopularVideo(pageToken: String = ""): Response<PopularVideoDto>
 
-    fun getPopularVideoPagingFlow(): Flow<PagingData<PopularVideoDto.Item>>
+    fun getPopularVideoPagingFlow(videoCategoryId: String = ""): Flow<PagingData<PopularVideoDto.Item>>
 
     suspend fun getChannelInfo(channelId: String = ""): Response<ChannelInfoDto>
 
@@ -29,10 +29,10 @@ class YoutubeRepositoryImpl @Inject constructor(private val api: YoutubeApi, pri
     override suspend fun getVideoCategories(): Response<VideoCategoryDto> = api.getVideoCategory()
     override suspend fun getPopularVideo(pageToken: String): Response<PopularVideoDto> = api.getPopularVideos(pageToken = pageToken)
 
-    override fun getPopularVideoPagingFlow(): Flow<PagingData<PopularVideoDto.Item>> = Pager(
+    override fun getPopularVideoPagingFlow(videoCategoryId: String): Flow<PagingData<PopularVideoDto.Item>> = Pager(
         config = PagingConfig(pageSize = 25),
         pagingSourceFactory = {
-            VideoPopularPagingSource(api, coroutineScope)
+            VideoPopularPagingSource(api, coroutineScope, videoCategoryId)
         }
     ).flow
 

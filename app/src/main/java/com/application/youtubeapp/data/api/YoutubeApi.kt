@@ -22,6 +22,7 @@ interface YoutubeApi {
     @GET("youtube/v3/videos")
     suspend fun getPopularVideos(@Query("part") part: String = "snippet",
                                  @Query("chart") chart: String = "mostPopular",
+                                 @Query("videoCategoryId") videoCategoryId: String = "",
                                  @Query("maxResults") maxResults: Int = 25,
                                  @Query("regionCode") regionCode: String = "IN",
                                  @Query("pageToken") pageToken: String = ""): Response<PopularVideoDto>

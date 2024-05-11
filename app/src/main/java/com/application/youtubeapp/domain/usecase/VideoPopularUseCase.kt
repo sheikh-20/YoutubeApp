@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.map
 import timber.log.Timber
 
 interface VideoPopularUseCase {
-    operator fun invoke(): Flow<PagingData<PopularVideo.Item>>
+    operator fun invoke(videoCategoryId: String = ""): Flow<PagingData<PopularVideo.Item>>
 }
 
 class GetVideoPopularInteractor(private val repository: YoutubeRepository): VideoPopularUseCase {
@@ -21,7 +21,7 @@ class GetVideoPopularInteractor(private val repository: YoutubeRepository): Vide
         const val TAG = "VideoCategoryUseCase"
     }
 
-    override fun invoke(): Flow<PagingData<PopularVideo.Item>> = repository.getPopularVideoPagingFlow().map {
+    override fun invoke(videoCategoryId: String): Flow<PagingData<PopularVideo.Item>> = repository.getPopularVideoPagingFlow(videoCategoryId).map {
         it.map { popularVideoDto ->
             popularVideoDto.toDomain()
         }
