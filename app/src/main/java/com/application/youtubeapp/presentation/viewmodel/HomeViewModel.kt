@@ -26,8 +26,8 @@ class HomeViewModel @Inject constructor(private val videoCategoryUseCase: VideoC
     private var _videoCategory = MutableLiveData<Resource<List<VideoCategory>>>(Resource.Loading)
     val videoCategory: LiveData<Resource<List<VideoCategory>>> get() = _videoCategory
 
-    private var _videoPopular = MutableLiveData<Resource<PopularVideo>>(Resource.Loading)
-    val videoPopular: LiveData<Resource<PopularVideo>> get() = _videoPopular
+    private var _selectedCategory = MutableLiveData<String>("")
+    val selectedCategory: LiveData<String> get() = _selectedCategory
 
     fun getVideoCategory() = viewModelScope.launch {
         try {
@@ -37,9 +37,9 @@ class HomeViewModel @Inject constructor(private val videoCategoryUseCase: VideoC
         }
     }
 
-    fun getPopularVideo() = videoPopularUseCase().cachedIn(viewModelScope)
+    fun getPopularVideo(videoCategoryId: String = "") = videoPopularUseCase(videoCategoryId).cachedIn(viewModelScope)
 
-    init {
-        getPopularVideo()
+    fun categoryClick(categoryId: String) {
+        _selectedCategory.value = categoryId
     }
 }

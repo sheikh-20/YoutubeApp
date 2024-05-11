@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.coroutineScope
 import androidx.lifecycle.lifecycleScope
 import com.application.youtubeapp.R
+import com.application.youtubeapp.adapter.OnItemClickListener
 import com.application.youtubeapp.adapter.VideoCategoryAdapter
 import com.application.youtubeapp.adapter.VideoPopularAdapter
 import com.application.youtubeapp.common.Resource
@@ -17,10 +18,15 @@ import com.application.youtubeapp.presentation.viewmodel.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
+
+    companion object {
+        const val TAG = "HomeFragment"
+    }
 
     private lateinit var binding: FragmentHomeBinding
     private val homeViewModel: HomeViewModel by viewModels()
@@ -43,7 +49,12 @@ class HomeFragment : Fragment() {
 
         homeViewModel.getVideoCategory()
 
-        adapter = VideoCategoryAdapter()
+        adapter = VideoCategoryAdapter(object : OnItemClickListener {
+            override fun onClick(categoryId: String, position: Int) {
+                homeViewModel.categoryClick(categoryId)
+                adapter.toggleSelection(position)
+            }
+        })
         binding.rvVideoCategory.adapter = adapter
 
 
@@ -60,13 +71,20 @@ class HomeFragment : Fragment() {
                 is Resource.Success -> {
                     binding.progressBar.hide()
                     adapter.submitList(it.data)
+
+                    homeViewModel.categoryClick(it.data[0].id ?: return@observe)
                 }
             }
         }
 
-        lifecycle.coroutineScope.launch {
-            homeViewModel.getPopularVideo().collect {
-                videoPopularAdapter.submitData(it)
+        homeViewModel.selectedCategory.observe(viewLifecycleOwner) { category ->
+
+            Timber.tag(TAG).d(category)
+
+            lifecycle.coroutineScope.launch {
+                homeViewModel.getPopularVideo(videoCategoryId = category ?: "").collect { video ->
+                    videoPopularAdapter.submitData(video)
+                }
             }
         }
     }

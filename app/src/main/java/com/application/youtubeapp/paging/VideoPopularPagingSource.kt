@@ -9,7 +9,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
-class VideoPopularPagingSource(private val api: YoutubeApi, private val coroutineScope: CoroutineScope): PagingSource<String, PopularVideoDto.Item>() {
+class VideoPopularPagingSource(private val api: YoutubeApi,
+                               private val coroutineScope: CoroutineScope,
+                               private val videoCategoryId: String = ""): PagingSource<String, PopularVideoDto.Item>() {
 
     companion object {
         private const val TAG = "VideoPopularPagingSource"
@@ -30,16 +32,14 @@ class VideoPopularPagingSource(private val api: YoutubeApi, private val coroutin
 
             Timber.tag("PageToken").d(pageToken)
 
-            val apiResult = api.getPopularVideos(pageToken = pageToken)
+            val apiResult = api.getPopularVideos(pageToken = pageToken, videoCategoryId = videoCategoryId)
             val videos = if (apiResult.isSuccessful) {
                 apiResult.body()
             } else if (apiResult.code() == 400 || apiResult.code() == 401 || apiResult.code() == 403) {
-                throw Throwable()
+                throw Throwable(message = apiResult.code().toString())
             } else {
-                throw Throwable()
+                throw Throwable(message = apiResult.code().toString())
             }
-
-
 
             val prevKey = if (pageToken.isEmpty()) null else videos?.prevPageToken
             Timber.tag("PrevKey").d(prevKey)
