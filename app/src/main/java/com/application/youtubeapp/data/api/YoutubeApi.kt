@@ -19,12 +19,14 @@ interface YoutubeApi {
                                  @Query("regionCode") regionCode: String = "IN"): Response<VideoCategoryDto>
 
 
-    @GET("youtube/v3/videos")
-    suspend fun getPopularVideos(@Query("part") part: String = "snippet",
-                                 @Query("chart") chart: String = "mostPopular",
+    @GET("youtube/v3/search")
+    suspend fun getPopularVideos(@Query("part") vararg part: String = arrayOf("snippet"),
+                                 @Query("type") type: String = "video",
+                                 @Query("q") query: String = "",
+//                                 @Query("chart") chart: String = "mostPopular",
                                  @Query("videoCategoryId") videoCategoryId: String = "",
                                  @Query("maxResults") maxResults: Int = 25,
-                                 @Query("regionCode") regionCode: String = "IN",
+                                 @Query("regionCode") regionCode: String = "US",
                                  @Query("pageToken") pageToken: String = ""): Response<PopularVideoDto>
 
 

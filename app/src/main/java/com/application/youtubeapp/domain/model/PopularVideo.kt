@@ -13,10 +13,21 @@ data class PopularVideo(
 
     data class Item(
         val etag: String?,
-        val id: String?,
+        val id: ID?,
         val kind: String?,
         val snippet: Snippet?
     ) {
+
+        @Serializable
+        data class ID(
+
+            @SerialName("kind")
+            val kind: String? = null,
+
+            @SerialName("videoId")
+            val videoId: String? = null
+        )
+
 
         data class Snippet(
             val categoryId: String?,
