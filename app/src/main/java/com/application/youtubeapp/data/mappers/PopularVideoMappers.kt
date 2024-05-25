@@ -2,11 +2,15 @@ package com.application.youtubeapp.data.mappers
 
 import com.application.youtubeapp.data.response.PopularVideoDto
 import com.application.youtubeapp.domain.model.PopularVideo
+import com.application.youtubeapp.domain.model.VideoDetail
 
 fun PopularVideoDto.Item.toDomain(): PopularVideo.Item {
     return PopularVideo.Item(
         kind = this.kind,
-        id = this.id,
+        id = PopularVideo.Item.ID(
+            kind = this.id?.kind,
+            videoId = this.id?.videoId
+        ),
         etag = this.etag,
         snippet = PopularVideo.Item.Snippet(
             categoryId = this.snippet?.categoryId,

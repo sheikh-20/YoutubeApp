@@ -66,6 +66,7 @@ class HomeFragment : Fragment() {
                     binding.progressBar.show()
                 }
                 is Resource.Failure -> {
+                    binding.failureText.text = it.throwable.localizedMessage + "Hello World!"
                     binding.progressBar.hide()
                 }
                 is Resource.Success -> {

@@ -56,7 +56,7 @@ class VideoPopularAdapter @Inject constructor(private val channelInfoUseCase: Ch
                 else
                     itemView.context
 
-                DetailActivity.startActivity(context as Activity, popularVideo.id)
+                DetailActivity.startActivity(context as Activity, popularVideo.id?.videoId)
             }
 
           coroutineScope.launch {
