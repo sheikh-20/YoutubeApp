@@ -26,9 +26,8 @@ class GetVideoCategoryInteractor(private val repository: YoutubeRepository): Vid
             if (result.isSuccessful) {
                 val category = result.body()?.toDomain() ?: emptyList()
                 Resource.Success(data = category)
-            } else if (result.code() == 400 || result.code() == 401 || result.code() == 404) {
-                Timber.tag(TAG).e("404 error")
-                Resource.Failure(Throwable())
+            } else if (result.code() == 400 || result.code() == 401 || result.code() == 403 || result.code() == 404) {
+                Resource.Failure(Throwable(message = result.code().toString()))
             } else {
                 Timber.tag(TAG).e("Server error")
                 Resource.Failure(Throwable())

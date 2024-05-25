@@ -32,7 +32,7 @@ data class PopularVideoDto(
         val etag: String? = null,
 
         @SerialName("id")
-        val id: String? = null,
+        val id: ID? = null,
 
         @SerialName("kind")
         val kind: String? = null,
@@ -40,6 +40,16 @@ data class PopularVideoDto(
         @SerialName("snippet")
         val snippet: Snippet? = null
     ) {
+
+        @Serializable
+        data class ID(
+
+            @SerialName("kind")
+            val kind: String? = null,
+
+            @SerialName("videoId")
+            val videoId: String? = null
+        )
 
         @Serializable
         data class Snippet(
