@@ -1,5 +1,215 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="primary_color">@color/md_theme_light_primary</color>
+    <color name="background">@color/md_theme_light_background</color>
+    <color name="background_lighter">#EEEEEE</color>
+    <color name="foreground">@color/md_theme_light_surfaceVariant</color>
+    <color name="foreground_faded">#77E3E4D3</color>
+    <color name="foreground_2">#EDEDDC</color>
+    <color name="foreground_light">#EFEFDF</color>
+    <color name="gold">#E3A200</color>
+    <color name="gold_faded">#DFBD67</color>
+    <color name="toolbar">#EDEDDC</color>
+    <color name="fade">#ddffffff</color>
+    <color name="fade_light">#88ffffff</color>
+
+    <color name="on_background">@color/md_theme_light_onBackground</color>
+    <color name="on_background_faded">@color/md_theme_light_onBackground_faded</color>
+    <color name="on_primary">@color/md_theme_light_onPrimary</color>
+    <color name="container">@color/md_theme_light_primaryContainer</color>
+    <color name="on_container">@color/md_theme_light_onPrimaryContainer</color>
+    <color name="foreground_fade_bottom">@color/background</color>
+    <color name="foreground_fade_middle">#55FFFFFF</color>
+    <color name="foreground_fade_top">#aaFFFFFF</color>
+    <color name="icon_faded">#ffffff</color>
+
+    <color name="disabled">#656565</color>
+    <color name="toggle_off_background">#dcdcdc</color>
+    <color name="toggle_off_foreground">#656565</color>
+    <color name="grey">#C8C8C8</color>
+
+    <color name="toggle_on_background">@color/primary_color</color>
+    <color name="toggle_on_foreground">#fff</color>
+
+    <color name="plan_start">#81d4fa</color>
+    <color name="plan_stop">@color/md_theme_dark_primary</color>
+    <color name="plan">#FD6D6A</color>
+    <color name="plan_light">#DC6A68</color>
+    <color name="tentative">#CCCCCC</color>
+    <color name="discovered">@color/md_theme_dark_primary</color>
+    <color name="completed">@color/line_option_light_8</color>
+    <color name="in_progress">@color/line_option_light_9</color>
+
+    <color name="pie_chart_0">#BBBBBB</color>
+    <color name="pie_chart_1">#A6D600</color>
+    <color name="pie_chart_2">#81A600</color>
+    <color name="pie_chart_3">#5D7700</color>
+    <color name="pie_chart_4">#384700</color>
+    <color name="pie_chart_5">#131700</color>
+
+    <color name="line_option_light_1">#e53935</color>
+    <color name="line_option_light_2">#f06292</color>
+    <color name="line_option_light_3">#ba68c8</color>
+    <color name="line_option_light_4">#9575cd</color>
+    <color name="line_option_light_5">#1e88e5</color>
+    <color name="line_option_light_6">#00bcd4</color>
+    <color name="line_option_light_7">#4caf50</color>
+    <color name="line_option_light_8">#B7D167</color>
+    <color name="line_option_light_9">#fbc02d</color>
+    <color name="line_option_light_10">#f57c00</color>
+
+    <color name="line_option_dark_1">#b71c1c</color>
+    <color name="line_option_dark_2">#4a148c</color>
+    <color name="line_option_dark_3">#1a237e</color>
+    <color name="line_option_dark_4">#005005</color>
+    <color name="line_option_dark_5">#bf360c</color>
+
+    <color name="rating_background">#BBBBB1</color>
+    <color name="timeline_color">#749100</color>
+    <color name="timeline_icon_color">@color/background</color>
+    <color name="timeline_path_color">@color/md_theme_dark_primary</color>
+
+    <!-- todo colors -->
+    <color name="unknown">#171717</color>
+    <color name="paved">#3E3E3E</color>
+    <color name="unpaved">#5A4848</color>
+    <color name="asphalt">#776363</color>
+    <color name="concrete">#838383</color>
+    <color name="cobblestone">#A68888</color>
+    <color name="metal">#707070</color>
+    <color name="wood">#7C310F</color>
+    <color name="compacted_gravel">#334543</color>
+    <color name="fine_gravel">#233C3C</color>
+    <color name="gravel">#3A5754</color>
+    <color name="dirt">#352222</color>
+    <color name="ground">#352222</color>
+    <color name="ice">#BCFFF6</color>
+    <color name="paving_stones">#ACABAB</color>
+    <color name="sand">#AA9A4A</color>
+    <color name="woodchips">#5E0F11</color>
+    <color name="grass">#068A1B</color>
+    <color name="grass_paver">#216339</color>
+
+    <color name="hiking">#4CAF50</color>
+    <color name="mountain_hiking">#8BC34A</color>
+    <color name="difficult_mountain_hiking">#CDDC39</color>
+    <color name="alpine_hiking">#FFEB3B</color>
+    <color name="difficult_alpine_hiking">#FFC107</color>
+    <color name="very_difficult_alpine_hiking">#FF9800</color>
+    <color name="extremely_difficult_alpine_hiking">#FF5722</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+
+    <color name="seed">#48551F</color>
+    <color name="error">@color/md_theme_light_error</color>
+    <color name="faded_error">#99BA1B1B</color>
+    <color name="correct">@color/md_theme_light_primary</color>
+    <color name="primary_text">#ff000000</color>
+    <color name="medium_text">#99000000</color>
+    <color name="light_text">#99000000</color>
+    <color name="light_text_2">#55000000</color>
+    <color name="light_text_3">#22000000</color>
+    <color name="hard_text">#000</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="transparent_10">#22000000</color>
+    <color name="undiscovered">#FF9999</color>
+    <color name="transparent_dark_50">#55000000</color>
+    <color name="transparent_light_50">#99FFFFFF</color>
+
+    <color name="low_risk">#5F9501</color>
+    <color name="medium_risk">#E3A200</color>
+    <color name="high_risk">#E24A01</color>
+    <color name="very_high_risk">#A51401</color>
+
+    <color name="visa_home">#355FC8</color>
+    <color name="visa_free">#5F9501</color>
+    <color name="visa_on_arrival">#E3A200</color>
+    <color name="visa_online">#E24A01</color>
+    <color name="visa_prior">#A51401</color>
+    <color name="visa_no_entry">#FF0000</color>
+    <color name="visa_unknown">#888888</color>
+
+    <color name="vibrant_1">#5F9501</color>
+    <color name="vibrant_2">#aa0000</color>
+    <color name="vibrant_3">#CD6800</color>
+    <color name="vibrant_4">#355FC8</color>
+    <color name="vibrant_5">#9342f5</color>
+    <color name="vibrant_4_1">#33355FC8</color>
+    <color name="vibrant_1_1">#335F9501</color>
+
+    <color name="error_container">@color/md_theme_light_error</color>
+    <color name="error_text">@color/md_theme_light_onError</color>
+    <color name="warning_container">#FF9800</color>
+    <color name="warning_text">#ffffff</color>
+    <color name="info_container">#355FC8</color>
+    <color name="info_text">#ffffff</color>
+
+    <color name="md_theme_light_primary">#516600</color>
+    <color name="md_theme_light_onPrimary">#FFFFFF</color>
+    <color name="md_theme_light_primaryContainer">#D3EE7F</color>
+    <color name="md_theme_light_onPrimaryContainer">#161F00</color>
+    <color name="md_theme_light_secondary">#5B6146</color>
+    <color name="md_theme_light_onSecondary">#FFFFFF</color>
+    <color name="md_theme_light_secondaryContainer">#E0E6C4</color>
+    <color name="md_theme_light_onSecondaryContainer">#181E08</color>
+    <color name="md_theme_light_tertiary">#3A665E</color>
+    <color name="md_theme_light_onTertiary">#FFFFFF</color>
+    <color name="md_theme_light_tertiaryContainer">#BCECE1</color>
+    <color name="md_theme_light_onTertiaryContainer">#00201B</color>
+    <color name="md_theme_light_error">#BA1B1B</color>
+    <color name="md_theme_light_errorContainer">#FFDAD4</color>
+    <color name="md_theme_light_onError">#FFFFFF</color>
+    <color name="md_theme_light_onErrorContainer">#410001</color>
+    <color name="md_theme_light_background">#FEFCF4</color>
+    <color name="md_theme_light_onBackground">#1B1C17</color>
+    <color name="md_theme_light_onBackground_faded">#aa1B1C17</color>
+    <color name="md_theme_light_surface">#FEFCF4</color>
+    <color name="md_theme_light_onSurface">#1B1C17</color>
+    <color name="md_theme_light_surfaceVariant">#EFF1DF</color>
+    <color name="md_theme_light_onSurfaceVariant">#46483C</color>
+    <color name="md_theme_light_outline">#77786B</color>
+    <color name="md_theme_light_inverseOnSurface">#F3F1E9</color>
+    <color name="md_theme_light_inverseSurface">#30312B</color>
+    <color name="md_theme_light_primaryInverse">#B7D167</color>
+
+    <color name="md_theme_dark_primary">#B7D167</color>
+    <color name="md_theme_dark_onPrimary">#283500</color>
+    <color name="md_theme_dark_primaryContainer">#3B4D00</color>
+    <color name="md_theme_dark_onPrimaryContainer">#D3EE7F</color>
+    <color name="md_theme_dark_secondary">#C4CAAA</color>
+    <color name="md_theme_dark_onSecondary">#2D331B</color>
+    <color name="md_theme_dark_secondaryContainer">#434930</color>
+    <color name="md_theme_dark_onSecondaryContainer">#E0E6C4</color>
+    <color name="md_theme_dark_tertiary">#A1D0C6</color>
+    <color name="md_theme_dark_onTertiary">#023730</color>
+    <color name="md_theme_dark_tertiaryContainer">#214E47</color>
+    <color name="md_theme_dark_onTertiaryContainer">#BCECE1</color>
+    <color name="md_theme_dark_error">#FFB4A9</color>
+    <color name="md_theme_dark_errorContainer">#930006</color>
+    <color name="md_theme_dark_onError">#680003</color>
+    <color name="md_theme_dark_onErrorContainer">#FFDAD4</color>
+    <color name="md_theme_dark_background">#1B1C17</color>
+    <color name="md_theme_dark_onBackground">#E5E3DB</color>
+    <color name="md_theme_dark_onBackground_faded">#aaE5E3DB</color>
+    <color name="md_theme_dark_surface">#1B1C17</color>
+    <color name="md_theme_dark_onSurface">#E5E3DB</color>
+    <color name="md_theme_dark_surfaceVariant">#2B2D24</color>
+    <color name="md_theme_dark_onSurfaceVariant">#C7C8B8</color>
+    <color name="md_theme_dark_outline">#909283</color>
+    <color name="md_theme_dark_inverseOnSurface">#1B1C17</color>
+    <color name="md_theme_dark_inverseSurface">#E5E3DB</color>
+    <color name="md_theme_dark_primaryInverse">#516600</color>
+
+
+    <color name="free">#000000</color>
+    <color name="expert">#CF8F08</color>
+    <color name="faded_expert">#77CF8F08</color>
+    <color name="on_expert">#ffffff</color>
+    <color name="foreground_expert">#FBF0E0</color>
+    <color name="foreground_expert_2">#FBEBD2</color>
+    <color name="background_expert">#fffbff</color>
+
+    <color name="sunshine">#ffc400</color>
+    <color name="booking_com">#0C3B7C</color>
+    <color name="on_dark_light_text">#aaffffff</color>
 </resources>

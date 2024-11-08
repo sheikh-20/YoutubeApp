@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_color">@color/md_theme_dark_primary</color>
+    <color name="background">@color/md_theme_dark_background</color>
+    <color name="background_lighter">#2F302C</color>
+    <color name="foreground">@color/md_theme_dark_surfaceVariant</color>
+    <color name="foreground_2">#35372E</color>
+    <color name="foreground_light">#3A3C32</color>
+    <color name="foreground_faded">#772B2D24</color>
+    <color name="toolbar">#2F302C</color>
+    <color name="fade">#dd1B1C17</color>
+    <color name="fade_light">#881B1C17</color>
+
+    <color name="on_background">@color/md_theme_dark_onBackground</color>
+    <color name="on_background_faded">@color/md_theme_dark_onBackground_faded</color>
+    <color name="on_primary">@color/md_theme_dark_onPrimary</color>
+    <color name="container">@color/md_theme_dark_primaryContainer</color>
+    <color name="on_container">@color/md_theme_dark_onPrimaryContainer</color>
+    <color name="timeline_color">@color/container</color>
+    <color name="timeline_path_color">@color/primary_color</color>
+
+    <color name="disabled">#C8C8C8</color>
+    <color name="toggle_off_background">#444</color>
+    <color name="toggle_off_foreground">#C8C8C8</color>
+
+    <color name="toggle_on_background">@color/primary_color</color>
+    <color name="toggle_on_foreground">#000</color>
+
+    <color name="primary_text">#ffffffff</color>
+    <color name="medium_text">#99ffffff</color>
+    <color name="light_text">#99ffffff</color>
+    <color name="light_text_2">#55ffffff</color>
+    <color name="light_text_3">#22ffffff</color>
+    <color name="hard_text">#fff</color>
+
+    <color name="error">@color/md_theme_dark_error</color>
+    <color name="faded_error">#CCFFB4A9</color>
+    <color name="correct">@color/md_theme_dark_primary</color>
+    <color name="transparent_10">#22FFFFFF</color>
+    <color name="rating_background">#5B5B58</color>
+    <color name="icon_faded">#88000000</color>
+
+    <color name="foreground_fade_bottom">@color/background</color>
+    <color name="foreground_fade_middle">#55000000</color>
+    <color name="foreground_fade_top">#aa000000</color>
+
+    <color name="error_container">@color/md_theme_dark_error</color>
+    <color name="error_text">@color/md_theme_dark_onError</color>
+    <color name="warning_container">#FFD496</color>
+    <color name="warning_text">#A15F00</color>
+    <color name="info_container">#B3C8FF</color>
+    <color name="info_text">#002380</color>
+
+    <color name="expert">#ffba2a</color>
+    <color name="faded_expert">#77ffba2a</color>
+    <color name="on_expert">#422c00</color>
+    <color name="foreground_expert">#332E23</color>
+    <color name="foreground_expert_2">#403A2D</color>
+    <color name="background_expert">#1f1b16</color>
+
+    <color name="booking_com">#0497FE</color>
+
+</resources>

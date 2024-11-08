@@ -18,10 +18,11 @@
 
         <ImageView
             android:id="@+id/iv_youtube"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:src="@drawable/youtube_activity_24px"
             app:tint="#FFFF0000"
+            android:scaleType="center"
             android:layout_marginHorizontal="8dp"
             android:contentDescription="@string/app_name"
             android:layout_centerVertical="true"
@@ -37,7 +38,7 @@
             android:layout_marginHorizontal="4dp"
             android:layout_toEndOf="@id/iv_youtube"
             android:layout_centerVertical="true"
-            style="@style/TextAppearance.Material3.TitleLarge"
+            style="@style/TextAppearance.Material3.BodyLarge"
             android:fontFamily="sans-serif-medium"
              />
 
@@ -55,7 +56,7 @@
                 android:id="@+id/iv_search"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/search_24px"
+                android:src="@drawable/ic_search"
                 android:contentDescription="@string/app_name"
                 />
 

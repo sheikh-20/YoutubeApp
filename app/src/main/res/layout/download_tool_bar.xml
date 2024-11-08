@@ -1,52 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.appbar.MaterialToolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="?attr/actionBarSize"
-    android:layout_width="match_parent"
-    app:contentInsetStart="0dp"
-    android:background="@android:color/transparent"
-    android:fitsSystemWindows="true"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentEnd="true">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <RelativeLayout
+    <data>
+
+    </data>
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_height="?attr/actionBarSize"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingHorizontal="16dp">
+        app:contentInsetStart="0dp"
+        android:background="@android:color/transparent"
+        android:fitsSystemWindows="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
 
-        <TextView
-            android:id="@+id/tv_app_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Download"
-            android:layout_marginHorizontal="4dp"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            style="@style/TextAppearance.Material3.TitleLarge"
-            android:fontFamily="sans-serif-medium"
-            />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_centerVertical="true"
-            android:gravity="center_vertical"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true">
+            android:paddingHorizontal="16dp">
 
-            <ImageView
-                android:id="@+id/iv_search"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/search_24px"
-                android:contentDescription="@string/app_name"
-                />
+            <TextView
+                android:id="@+id/tv_app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Download"
+                android:layout_marginHorizontal="4dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                style="@style/TextAppearance.Material3.TitleLarge"
+                android:fontFamily="sans-serif-medium" />
 
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true">
 
-    </RelativeLayout>
+                <ImageView
+                    android:id="@+id/iv_search"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_search"
+                    android:contentDescription="@string/app_name" />
 
-</com.google.android.material.appbar.MaterialToolbar>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+</layout>

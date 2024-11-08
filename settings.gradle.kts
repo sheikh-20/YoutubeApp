@@ -15,4 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Youtube App"
 include(":app")
- 
+include(":presentation")
+include(":data")

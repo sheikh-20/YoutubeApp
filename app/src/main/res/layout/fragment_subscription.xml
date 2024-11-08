@@ -1,74 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingHorizontal="8dp"
-    tools:context=".presentation.home.SubscriptionFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <include android:id="@+id/top_bar" layout="@layout/subscription_tool_bar" />
+    <data>
 
-    <com.google.android.material.divider.MaterialDivider
-        android:id="@+id/divider"
+    </data>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_below="@id/top_bar"
-        android:visibility="invisible"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_height="match_parent"
+        android:paddingHorizontal="8dp"
+        tools:context=".presentation.home.SubscriptionFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_channel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:clipToPadding="false"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@id/divider"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/channel_name_circular_view"
-        tools:itemCount="4"
-        />
+        <include
+            android:id="@+id/top_bar"
+            layout="@layout/subscription_tool_bar" />
 
-    <com.google.android.material.divider.MaterialDivider
-        android:id="@+id/divider2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:layout_marginVertical="8dp"
-        android:layout_below="@id/rv_channel"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"/>
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_below="@id/top_bar"
+            android:visibility="invisible"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_video_category"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="horizontal"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@id/divider2"
-        tools:listitem="@layout/video_category_view"
-        tools:itemCount="4"
-        />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_channel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:clipToPadding="false"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/divider"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/channel_name_circular_view"
+            tools:itemCount="4" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_video_popular"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rv_video_category"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="vertical"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:nestedScrollingEnabled="false"
-        tools:listitem="@layout/video_view2"
-        tools:itemCount="3"
-        />
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_marginVertical="8dp"
+            android:layout_below="@id/rv_channel"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true" />
 
-</RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_video_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/divider2"
+            tools:listitem="@layout/video_category_view"
+            tools:itemCount="4" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_video_popular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rv_video_category"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:nestedScrollingEnabled="false"
+            tools:listitem="@layout/video_view2"
+            tools:itemCount="3" />
+
+    </RelativeLayout>
+</layout>

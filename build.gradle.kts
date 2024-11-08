@@ -4,13 +4,15 @@ buildscript {
         set("nav_version", "2.7.6")
     }
     dependencies {
-        classpath("com.google.dagger:hilt-android-gradle-plugin:2.48")
+        classpath(libs.hilt.android.gradle.plugin)
+        classpath(libs.google.services)
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:${rootProject.extra.get("nav_version")}")
-        classpath("com.android.tools.build:gradle:7.3.0")
+        classpath(libs.gradle)
     }
 }
 plugins {
-    id("com.android.application") version "8.1.2" apply false
-    id("org.jetbrains.kotlin.android") version "1.9.0" apply false
-    id("com.google.dagger.hilt.android") version "2.44" apply false
+    id("com.android.application") version "8.7.2" apply false
+    id("org.jetbrains.kotlin.android") version "2.0.21" apply false
+    id("com.google.dagger.hilt.android") version "2.51.1" apply false
+    id("org.jetbrains.kotlin.plugin.compose") version "2.0.21" apply false
 }

@@ -61,4 +61,6 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="choose_your_interest_and_get_the_best_video_recommendations_don_t_worry_you_can_always_change_it_later">Choose your interest and get the best video recommendations. Don\'t worry you can always change it later</string>
+
+    <string name="server_client_id" translatable="false">313575591612-ebii7focgdr9lvdhpb3rd2ceamajt6tr.apps.googleusercontent.com</string>
 </resources>

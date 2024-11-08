@@ -1,55 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.home.HomeFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <include android:id="@+id/top_bar" layout="@layout/home_tool_bar" />
+    <data>
+        <import type="android.view.View" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_video_category"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="16dp"
-        android:clipToPadding="false"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="horizontal"
-        android:layout_alignParentStart="true"
-        android:layout_below="@id/top_bar"
-        android:layout_alignParentEnd="true"
-        tools:listitem="@layout/video_category_view"
-        tools:itemCount="4"
-        />
+        <import type="com.application.youtubeapp.common.Resource" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_video_popular"
+        <variable
+            name="viewmodel"
+            type="com.application.youtubeapp.presentation.viewmodel.HomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="vertical"
-        android:layout_below="@id/rv_video_category"
-        android:layout_marginTop="10dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        tools:listitem="@layout/video_view"
-        tools:itemCount="3"
-        />
+        tools:context=".presentation.home.HomeFragment">
 
-    <androidx.core.widget.ContentLoadingProgressBar
-        android:id="@+id/progress_bar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true" />
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/rounded_rectangle"
+            android:elevation="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/failure_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textColor="@color/white"/>
+            <FrameLayout
+                android:id="@+id/inner_appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_rectangle"
+                android:backgroundTint="@color/toolbar"
+                android:outlineProvider="background">
 
+                <View
+                    android:id="@+id/profile_holder"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" />
 
-</RelativeLayout>
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    app:menu="@menu/profile_toolbar"
+                    app:navigationIcon="@drawable/ic_search"
+                    app:navigationIconTint="@color/on_background"
+                    app:titleTextAppearance="@style/Toolbar.TitleText"
+                    app:title="Search here">
+
+                </com.google.android.material.appbar.MaterialToolbar>
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="@style/BasicProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_gravity="bottom"
+                    android:elevation="4dp"
+                    android:visibility="@{viewmodel.videoCategoryResponse instanceof Resource.Loading ? View.VISIBLE : View.GONE}"
+                    tools:max="9"
+                    tools:progress="6" />
+
+            </FrameLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_video_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="14dp"
+            android:layout_marginTop="16dp"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/appbar"
+            tools:listitem="@layout/video_category_view"
+            tools:itemCount="4" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_video_popular"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            android:layout_below="@id/rv_video_category"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_video_category"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:listitem="@layout/video_view"
+            tools:itemCount="3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,6 +1,8 @@
 package com.application.youtubeapp.base
 
+import android.content.Context
 import android.graphics.Color
+import android.util.AttributeSet
 import android.view.View
 import android.view.WindowManager
 import androidx.activity.ComponentActivity

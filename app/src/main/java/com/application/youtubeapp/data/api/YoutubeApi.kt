@@ -16,7 +16,7 @@ interface YoutubeApi {
 
     @GET("youtube/v3/videoCategories")
     suspend fun getVideoCategory(@Query("part") part: String = "snippet",
-                                 @Query("regionCode") regionCode: String = "IN"): Response<VideoCategoryDto>
+                                 @Query("regionCode") regionCode: String = "US"): Response<VideoCategoryDto>
 
 
     @GET("youtube/v3/search")

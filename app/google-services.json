@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "313575591612",
+    "project_id": "youtube-app-403814",
+    "storage_bucket": "youtube-app-403814.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313575591612:android:3a58ebe608813f72bacab9",
+        "android_client_info": {
+          "package_name": "com.application.youtubeapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313575591612-ebii7focgdr9lvdhpb3rd2ceamajt6tr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.application.youtubeapp",
+            "certificate_hash": "f1104b7427d149805d370315d618e1c8bcf23dd1"
+          }
+        },
+        {
+          "client_id": "313575591612-mevqe2m6mgk2rcf2nrdcklllct9kctp4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTjibybgU4WrwvUe7Uvd1TeqbOgqvdfS8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313575591612-mevqe2m6mgk2rcf2nrdcklllct9kctp4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

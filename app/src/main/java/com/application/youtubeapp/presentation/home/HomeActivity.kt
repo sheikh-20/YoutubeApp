@@ -2,62 +2,53 @@ package com.application.youtubeapp.presentation.home
 
 import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
-import androidx.appcompat.app.ActionBar
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.navigation.NavController
-import androidx.navigation.NavHostController
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import com.application.youtubeapp.R
 import com.application.youtubeapp.base.BaseActivity
+import com.application.youtubeapp.common.Resource
 import com.application.youtubeapp.databinding.ActivityMainBinding
 import com.application.youtubeapp.presentation.viewmodel.OnboardingViewModel
-import com.google.android.material.shape.CornerFamily
-import com.google.android.material.shape.MaterialShapeDrawable
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.common.api.Scope
+import com.google.android.gms.tasks.Task
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.lifecycle.HiltViewModel
+import timber.log.Timber
 
 @AndroidEntryPoint
 class HomeActivity : BaseActivity() {
 
     companion object {
+        const val TAG = "HomeActivity"
+
         fun startActivity(activity: Activity?) {
             val intent = Intent(activity, HomeActivity::class.java)
             activity?.startActivity(intent)
+            activity?.finish()
         }
     }
 
     private lateinit var binding: ActivityMainBinding
     private val onboardingViewModel: OnboardingViewModel by viewModels()
 
+    override fun observerViewModel() {  }
+
     override fun onResume() {
         super.onResume()
         setTransparentStatusBar()
     }
 
-    override fun observerViewModel() {
-        TODO("Not yet implemented")
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         installSplashScreen().apply {
-            setKeepOnScreenCondition {
-                onboardingViewModel.loading.value ?: false
-            }
+            setKeepOnScreenCondition { onboardingViewModel.loading.value ?: false }
         }
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        val navController = navHostFragment.navController
-        binding.bottomNavigation.setupWithNavController(navController)
     }
 }

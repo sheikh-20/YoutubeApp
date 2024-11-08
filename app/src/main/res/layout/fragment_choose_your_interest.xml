@@ -1,65 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="16dp"
-    tools:context=".presentation.accountsetup.ChooseYourInterestFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/tv_title"
-        style="@style/TextAppearance.Material3.BodyLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/choose_your_interest_and_get_the_best_video_recommendations_don_t_worry_you_can_always_change_it_later"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        />
+    <data>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_video_category"
+    </data>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
-        android:layout_below="@id/tv_title"
-        android:layout_above="@id/ll_btn"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:clipToPadding="false"
-        app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
-        android:orientation="vertical"
-        app:spanCount="3"
-        tools:listitem="@layout/video_category_view"
-        tools:itemCount="4"
-        />
+        android:padding="16dp"
+        tools:context=".presentation.accountsetup.ChooseYourInterestFragment">
 
-    <LinearLayout
-        android:id="@+id/ll_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="32dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true">
-
-        <Button
-            style="@style/Widget.Material3.Button.OutlinedButton"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Skip"
-            android:layout_marginHorizontal="4dp"/>
+            android:text="@string/choose_your_interest_and_get_the_best_video_recommendations_don_t_worry_you_can_always_change_it_later"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true" />
 
-        <Button
-            style="@style/Widget.Material3.Button"
-            android:layout_width="0dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_video_category"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/tv_title"
+            android:layout_above="@id/ll_btn"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            android:orientation="vertical"
+            app:spanCount="3"
+            tools:listitem="@layout/video_category_view"
+            tools:itemCount="4" />
+
+        <LinearLayout
+            android:id="@+id/ll_btn"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Continue"
-            android:layout_marginHorizontal="4dp"/>
+            android:orientation="horizontal"
+            android:layout_marginTop="32dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true">
 
-    </LinearLayout>
-</RelativeLayout>
+            <Button
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Skip"
+                android:layout_marginHorizontal="4dp" />
+
+            <Button
+                style="@style/Widget.Material3.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Continue"
+                android:layout_marginHorizontal="4dp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

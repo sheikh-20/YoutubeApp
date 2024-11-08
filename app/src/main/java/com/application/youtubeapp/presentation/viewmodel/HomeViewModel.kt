@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import com.application.youtubeapp.common.Resource
-import com.application.youtubeapp.domain.model.PopularVideo
 import com.application.youtubeapp.domain.model.VideoCategory
 import com.application.youtubeapp.domain.usecase.VideoCategoryUseCase
 import com.application.youtubeapp.domain.usecase.VideoPopularUseCase
@@ -23,15 +22,15 @@ class HomeViewModel @Inject constructor(private val videoCategoryUseCase: VideoC
         const val TAG = "HomeViewModel"
     }
 
-    private var _videoCategory = MutableLiveData<Resource<List<VideoCategory>>>(Resource.Loading)
-    val videoCategory: LiveData<Resource<List<VideoCategory>>> get() = _videoCategory
+    private var _videoCategoryResponse = MutableLiveData<Resource<List<VideoCategory>>>(Resource.Loading)
+    val videoCategoryResponse: LiveData<Resource<List<VideoCategory>>> get() = _videoCategoryResponse
 
     private var _selectedCategory = MutableLiveData<String>("")
     val selectedCategory: LiveData<String> get() = _selectedCategory
 
     fun getVideoCategory() = viewModelScope.launch {
         try {
-            _videoCategory.postValue(videoCategoryUseCase() ?: return@launch)
+            _videoCategoryResponse.postValue(videoCategoryUseCase() ?: return@launch)
         } catch (exception: IOException) {
             Timber.tag(TAG).e(exception)
         }

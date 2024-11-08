@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="4dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/btn_title"
-        style="@style/Widget.Material3.Chip.Filter.Elevated"
+    <data>
+
+    </data>
+
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        app:chipMinTouchTargetSize="0dp"
-        tools:text="All" />
+        >
 
-</RelativeLayout>
+        <com.google.android.material.chip.Chip
+            android:id="@+id/btn_title"
+            style="@style/Widget.Material3.Chip.Filter.Elevated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            app:chipMinTouchTargetSize="0dp"
+            tools:text="All" />
+
+    </RelativeLayout>
+</layout>

@@ -27,7 +27,7 @@
         <activity
             android:name=".presentation.onboarding.OnboardingActivity"
             android:exported="true"
-            android:theme="@style/Theme.YoutubeApp.Splash">
+            android:theme="@style/Theme.YoutubeApp">
 
         </activity>
         <activity
