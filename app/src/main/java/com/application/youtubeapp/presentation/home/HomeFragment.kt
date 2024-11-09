@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.coroutineScope
 import coil.ImageLoader
@@ -34,8 +35,8 @@ class HomeFragment : Fragment() {
     }
 
     private lateinit var binding: FragmentHomeBinding
-    private val homeViewModel: HomeViewModel by viewModels()
-    private val onboardingViewModel: OnboardingViewModel by viewModels()
+    private val homeViewModel: HomeViewModel by activityViewModels()
+    private val onboardingViewModel: OnboardingViewModel by activityViewModels()
     private lateinit var adapter: VideoCategoryAdapter
 
     @Inject
@@ -81,6 +82,7 @@ class HomeFragment : Fragment() {
                     .transformations(CircleCropTransformation())
                     .target(object : Target{
                         override fun onSuccess(result: Drawable) {
+
                             binding.toolbar.menu.findItem(R.id.account_settings).icon = result
                         }
                         override fun onError(error: Drawable?) {
@@ -89,10 +91,15 @@ class HomeFragment : Fragment() {
                     })
                     .build()
                 imageLoader.enqueue(request)
-            } else {
-                OnboardingActivity.startActivity(requireActivity())
+
+                binding.toolbar.menu.findItem(R.id.account_settings).setOnMenuItemClickListener {
+                    onboardingViewModel.logout()
+                    HomeActivity.startActivity(requireActivity())
+                    true
+                }
             }
         }
+
         homeViewModel.selectedCategory.observe(viewLifecycleOwner) { category ->
             lifecycle.coroutineScope.launch {
                 homeViewModel.getPopularVideo(videoCategoryId = category ?: "").collect { video ->

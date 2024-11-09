@@ -36,4 +36,8 @@ class AuthRepo @Inject constructor(
         val credential = GoogleAuthProvider.getCredential(token, null)
         return auth.signInWithCredential(credential).await()
     }
+
+    fun logout() {
+        auth.signOut()
+    }
 }
